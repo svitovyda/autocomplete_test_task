@@ -1,5 +1,5 @@
 import type { CityID, CityMapModel } from '../../../models/Config';
-import { InputContainer } from '../../../styles/Input';
+import { InputContainer, InputStyled } from '../../../styles/Input';
 import { MainContainer } from '../../../styles/Main';
 import { Autocomplete } from '../../ui/Autocomplete';
 import { MapView } from './MapView';
@@ -18,7 +18,12 @@ export const CitiesScreen: React.FC = () => {
     <MainContainer>
       <h1>Static Data: Cities</h1>
       <InputContainer>
-        <Autocomplete />
+        <Autocomplete
+          debounceInterval={configJson.searchInputDebounse}
+          minAcceptableLength={configJson.minimumSearchQueryLength}
+          InputComponent={InputStyled}
+          placeholder="Start typing to find cities..."
+        />
       </InputContainer>
       <MapView marker={defaultCity} />
     </MainContainer>

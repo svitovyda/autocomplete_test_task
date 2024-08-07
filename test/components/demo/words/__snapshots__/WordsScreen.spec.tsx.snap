@@ -8,6 +8,23 @@ exports[`WordsScreen renders without error 1`] = `
   width: 100%;
 }
 
+.c2 {
+  display: inline-block;
+  padding-block: 1px;
+  padding-inline: 2px;
+  padding: 4px 2px;
+  cursor: text;
+  border: 0;
+  border-radius: 1px;
+  box-shadow: 0 0 1px #aaa;
+  font-size: 18px;
+  font-weight: 400;
+  width: 100%;
+  margin: 8px;
+  outline-width: 0;
+  color: inherit;
+}
+
 .c0 {
   max-width: 600px;
   margin: 0 auto;
@@ -15,13 +32,13 @@ exports[`WordsScreen renders without error 1`] = `
   display: block;
 }
 
-.c2 {
+.c3 {
   height: 50px;
   width: 50px;
   margin: 5px auto;
 }
 
-.c3 {
+.c4 {
   position: relative;
   top: 0;
   left: 0;
@@ -37,7 +54,7 @@ exports[`WordsScreen renders without error 1`] = `
   transform-origin: 50% 50%;
 }
 
-.c4 {
+.c5 {
   position: relative;
   top: -52px;
   left: 5px;
@@ -53,7 +70,7 @@ exports[`WordsScreen renders without error 1`] = `
   transform-origin: 50% 50%;
 }
 
-.c5 {
+.c6 {
   position: relative;
   top: -80px;
   left: -22px;
@@ -83,22 +100,23 @@ exports[`WordsScreen renders without error 1`] = `
           class="c1"
         >
           <input
-            placeholder=""
+            class="c2"
+            placeholder="Start typing to find words..."
             type="text"
             value=""
           />
         </div>
         <div
-          class="c2"
+          class="c3"
         >
-          <div
-            class="c3"
-          />
           <div
             class="c4"
           />
           <div
             class="c5"
+          />
+          <div
+            class="c6"
           >
             loading
           </div>
@@ -111,6 +129,23 @@ exports[`WordsScreen renders without error 1`] = `
   width: 100%;
 }
 
+.c2 {
+  display: inline-block;
+  padding-block: 1px;
+  padding-inline: 2px;
+  padding: 4px 2px;
+  cursor: text;
+  border: 0;
+  border-radius: 1px;
+  box-shadow: 0 0 1px #aaa;
+  font-size: 18px;
+  font-weight: 400;
+  width: 100%;
+  margin: 8px;
+  outline-width: 0;
+  color: inherit;
+}
+
 .c0 {
   max-width: 600px;
   margin: 0 auto;
@@ -118,13 +153,13 @@ exports[`WordsScreen renders without error 1`] = `
   display: block;
 }
 
-.c2 {
+.c3 {
   height: 50px;
   width: 50px;
   margin: 5px auto;
 }
 
-.c3 {
+.c4 {
   position: relative;
   top: 0;
   left: 0;
@@ -140,7 +175,7 @@ exports[`WordsScreen renders without error 1`] = `
   transform-origin: 50% 50%;
 }
 
-.c4 {
+.c5 {
   position: relative;
   top: -52px;
   left: 5px;
@@ -156,7 +191,7 @@ exports[`WordsScreen renders without error 1`] = `
   transform-origin: 50% 50%;
 }
 
-.c5 {
+.c6 {
   position: relative;
   top: -80px;
   left: -22px;
@@ -185,22 +220,23 @@ exports[`WordsScreen renders without error 1`] = `
         class="c1"
       >
         <input
-          placeholder=""
+          class="c2"
+          placeholder="Start typing to find words..."
           type="text"
           value=""
         />
       </div>
       <div
-        class="c2"
+        class="c3"
       >
-        <div
-          class="c3"
-        />
         <div
           class="c4"
         />
         <div
           class="c5"
+        />
+        <div
+          class="c6"
         >
           loading
         </div>

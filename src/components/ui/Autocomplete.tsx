@@ -1,11 +1,16 @@
 import debounce from 'debounce';
 import * as React from 'react';
 
+const Input: React.FC<React.InputHTMLAttributes<HTMLInputElement>> = (props) => {
+  return <input {...props} />;
+};
+
 export interface AutocompleteProps<T> {
   onQueryChanged?: (query: string) => void;
   onItemSelected?: (item: T) => void;
   minAcceptableLength?: number;
   debounceInterval?: number;
+  InputComponent?: React.ComponentType<React.InputHTMLAttributes<HTMLInputElement>>;
   placeholder?: string;
   maxOptionsToShow?: number;
 }
@@ -15,6 +20,7 @@ export const Autocomplete = <T,>({
   onItemSelected,
   minAcceptableLength = 3,
   debounceInterval = 3,
+  InputComponent = Input,
   placeholder = '',
   maxOptionsToShow = 5,
 }: AutocompleteProps<T>): JSX.Element => {
@@ -53,7 +59,7 @@ export const Autocomplete = <T,>({
   console.log(onItemSelected, maxOptionsToShow);
 
   return (
-    <input
+    <InputComponent
       type="text"
       value={query}
       onChange={handleChange}
