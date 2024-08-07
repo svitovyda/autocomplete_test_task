@@ -3,67 +3,16 @@
 exports[`CitiesScreen renders without error 1`] = `
 {
   "asFragment": [Function],
-  "baseElement": .c0 {
+  "baseElement": .c1 {
+  display: block;
+  width: 100%;
+}
+
+.c0 {
   max-width: 600px;
   margin: 0 auto;
   padding: 0 10px;
   display: block;
-}
-
-.c1 {
-  height: 50px;
-  width: 50px;
-  margin: 5px auto;
-}
-
-.c2 {
-  position: relative;
-  top: 0;
-  left: 0;
-  height: 50px;
-  width: 50px;
-  border-radius: 100%;
-  border: 3px solid transparent;
-  border-color: transparent lightgrey transparent lightgrey;
-  -webkit-animation: LtRVX 2s linear 0s infinite normal;
-  animation: LtRVX 2s linear 0s infinite normal;
-  -webkit-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-}
-
-.c3 {
-  position: relative;
-  top: -52px;
-  left: 5px;
-  width: 43px;
-  height: 43px;
-  border-radius: 100%;
-  border: 2px solid transparent;
-  border-color: transparent lightgrey transparent lightgrey;
-  -webkit-animation: cLNnjC 1s linear 0s infinite normal;
-  animation: cLNnjC 1s linear 0s infinite normal;
-  -webkit-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-}
-
-.c4 {
-  position: relative;
-  top: -80px;
-  left: -22px;
-  width: 100px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-animation: kRlIGi 3s linear 0s infinite normal;
-  animation: kRlIGi 3s linear 0s infinite normal;
-  color: lightgrey;
-  font: bold 8px 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  opacity: 0;
-  text-align: center;
-  text-transform: uppercase;
 }
 
 <body>
@@ -74,90 +23,34 @@ exports[`CitiesScreen renders without error 1`] = `
         <h1>
           Static Data: Cities
         </h1>
-        <input
-          placeholder=""
-          type="text"
-          value=""
-        />
         <div
           class="c1"
         >
-          <div
-            class="c2"
+          <input
+            placeholder=""
+            type="text"
+            value=""
           />
-          <div
-            class="c3"
-          />
-          <div
-            class="c4"
-          >
-            loading
-          </div>
+        </div>
+        <div>
+          MapView Mock
+          <pre>
+            {"marker":{"id":"4","name":"Berlin","lat":52.52,"lng":13.405}}
+          </pre>
         </div>
       </div>
     </div>
   </body>,
-  "container": .c0 {
+  "container": .c1 {
+  display: block;
+  width: 100%;
+}
+
+.c0 {
   max-width: 600px;
   margin: 0 auto;
   padding: 0 10px;
   display: block;
-}
-
-.c1 {
-  height: 50px;
-  width: 50px;
-  margin: 5px auto;
-}
-
-.c2 {
-  position: relative;
-  top: 0;
-  left: 0;
-  height: 50px;
-  width: 50px;
-  border-radius: 100%;
-  border: 3px solid transparent;
-  border-color: transparent lightgrey transparent lightgrey;
-  -webkit-animation: LtRVX 2s linear 0s infinite normal;
-  animation: LtRVX 2s linear 0s infinite normal;
-  -webkit-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-}
-
-.c3 {
-  position: relative;
-  top: -52px;
-  left: 5px;
-  width: 43px;
-  height: 43px;
-  border-radius: 100%;
-  border: 2px solid transparent;
-  border-color: transparent lightgrey transparent lightgrey;
-  -webkit-animation: cLNnjC 1s linear 0s infinite normal;
-  animation: cLNnjC 1s linear 0s infinite normal;
-  -webkit-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-}
-
-.c4 {
-  position: relative;
-  top: -80px;
-  left: -22px;
-  width: 100px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-animation: kRlIGi 3s linear 0s infinite normal;
-  animation: kRlIGi 3s linear 0s infinite normal;
-  color: lightgrey;
-  font: bold 8px 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  opacity: 0;
-  text-align: center;
-  text-transform: uppercase;
 }
 
 <div>
@@ -167,25 +60,20 @@ exports[`CitiesScreen renders without error 1`] = `
       <h1>
         Static Data: Cities
       </h1>
-      <input
-        placeholder=""
-        type="text"
-        value=""
-      />
       <div
         class="c1"
       >
-        <div
-          class="c2"
+        <input
+          placeholder=""
+          type="text"
+          value=""
         />
-        <div
-          class="c3"
-        />
-        <div
-          class="c4"
-        >
-          loading
-        </div>
+      </div>
+      <div>
+        MapView Mock
+        <pre>
+          {"marker":{"id":"4","name":"Berlin","lat":52.52,"lng":13.405}}
+        </pre>
       </div>
     </div>
   </div>,

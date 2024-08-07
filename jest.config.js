@@ -10,6 +10,7 @@ module.exports = {
   transform: {
     '^.+\\.js$': 'babel-jest',
     '^.+\\.ts(x?)$': ['ts-jest', { isolatedModules: true, tsConfig: 'tsconfig.test.json' }],
+    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': 'jest-transform-stub',
   },
   testPathIgnorePatterns: ['/node_modules/', '/gen/', '__mock__'],
   reporters: ['default', 'jest-junit'],

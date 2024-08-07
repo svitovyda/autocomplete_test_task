@@ -1,5 +1,5 @@
-import * as React from 'react';
 import debounce from 'debounce';
+import * as React from 'react';
 
 export interface AutocompleteProps<T> {
   onQueryChanged?: (query: string) => void;
@@ -9,8 +9,6 @@ export interface AutocompleteProps<T> {
   placeholder?: string;
   maxOptionsToShow?: number;
 }
-
-
 
 export const Autocomplete = <T,>({
   onQueryChanged,
@@ -42,21 +40,26 @@ export const Autocomplete = <T,>({
     [onQueryChanged, minAcceptableLength, debounceInterval]
   );
 
-  const handleChange = React.useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-    setQuery(value);
-    updateSearchQuery(value);
-  }, [setQuery, updateSearchQuery]);
+  const handleChange = React.useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const { value } = e.target;
+      setQuery(value);
+      updateSearchQuery(value);
+    },
+    [setQuery, updateSearchQuery]
+  );
 
   // to prevent compilation error, TODO: remove!
   console.log(onItemSelected, maxOptionsToShow);
 
-  return (<input
-    type="text"
-    value={query}
-    onChange={handleChange}
-    placeholder={placeholder}
-    onBlur={onFocusOut}
-    onFocus={onFocusIn}
-  />);
+  return (
+    <input
+      type="text"
+      value={query}
+      onChange={handleChange}
+      placeholder={placeholder}
+      onBlur={onFocusOut}
+      onFocus={onFocusIn}
+    />
+  );
 };

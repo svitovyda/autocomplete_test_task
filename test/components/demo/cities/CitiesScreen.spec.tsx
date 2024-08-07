@@ -1,7 +1,16 @@
+import { CitiesScreen } from '../../../../src/components/demo/cities/CitiesScreen';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
 import * as React from 'react';
-import { CitiesScreen } from '../../../../src/components/demo/cities/CitiesScreen';
+
+jest.mock('../../../../src/components/demo/cities/MapView', () => ({
+  MapView: (props: any) => (
+    <div>
+      MapView Mock
+      <pre>{JSON.stringify(props)}</pre>
+    </div>
+  ),
+}));
 
 describe('CitiesScreen', () => {
   it('renders without error', () => {

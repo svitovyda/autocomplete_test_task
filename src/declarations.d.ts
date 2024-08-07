@@ -1,7 +1,6 @@
 declare module 'config' {
-  import type { ApiServiceConfig } from './models/Config';
-
-  const value: ApiServiceConfig;
+  import type { AppConfig } from './models/Config';
+  const value: AppConfig;
   export default value;
 }
 
