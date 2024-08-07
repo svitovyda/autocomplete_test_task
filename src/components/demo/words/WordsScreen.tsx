@@ -15,6 +15,7 @@ export const WordsScreen: React.FC = () => {
           minAcceptableLength={configJson.minimumSearchQueryLength}
           InputComponent={InputStyled}
           placeholder="Start typing to find words..."
+          data={[]}
         />
       </InputContainer>
       <LoaderAnimation />

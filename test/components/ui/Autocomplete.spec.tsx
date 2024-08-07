@@ -6,13 +6,13 @@ import * as React from 'react';
 
 describe('Autocomplete', () => {
   it('renders without error', () => {
-    const component = render(<Autocomplete />);
+    const component = render(<Autocomplete data={[]} />);
 
     expect(component).toMatchSnapshot();
   });
 
   it('renders without error styled', () => {
-    const component = render(<Autocomplete InputComponent={InputStyled} />);
+    const component = render(<Autocomplete InputComponent={InputStyled} data={[]} />);
 
     expect(component).toMatchSnapshot();
   });

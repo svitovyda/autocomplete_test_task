@@ -13,8 +13,20 @@ export interface AutocompleteProps<T> {
   InputComponent?: React.ComponentType<React.InputHTMLAttributes<HTMLInputElement>>;
   placeholder?: string;
   maxOptionsToShow?: number;
+  autoCalculate?: boolean;
+  data: T[];
+  dataLabel?: (item: T) => string;
+  dataId?: (item: T) => string | number;
 }
-
+/*
+ * This component renders input with autocompletion
+ * It can be in two modes:
+ * - autoCalculate ("static")
+ *   it gets all the data once and then as user interacts, searches through this given data
+ * - "dynamic"
+ *   it assumes that all the calculations with data search by query happen outside of the component,
+ *   and it just renders data
+ */
 export const Autocomplete = <T,>({
   onQueryChanged,
   onItemSelected,
@@ -23,8 +35,14 @@ export const Autocomplete = <T,>({
   InputComponent = Input,
   placeholder = '',
   maxOptionsToShow = 5,
+  autoCalculate,
+  data,
+  dataLabel = (item: T) => (item as any).toString(),
+  dataId = (item: T) => (item as any).toString(),
 }: AutocompleteProps<T>): JSX.Element => {
-  const [query, setQuery] = React.useState('');
+  const [input, setInput] = React.useState(''); // current state of the input
+  const [query, setQuery] = React.useState(''); // deboused query
+  const [labelsToShow, setLabelsToShow] = React.useState<string[]>([]);
 
   const onFocusIn = React.useCallback(() => {
     // show drop-out, data to show have to be set in `handleChange`
@@ -32,6 +50,7 @@ export const Autocomplete = <T,>({
 
   const onFocusOut = React.useCallback(() => {
     // hide drop-out, do not clear query (?)
+    setLabelsToShow([]);
   }, []);
 
   // eslint doesn't know how to work with debounce
@@ -40,6 +59,7 @@ export const Autocomplete = <T,>({
     debounce((value: string) => {
       if (value.length >= minAcceptableLength) {
         onQueryChanged?.(value);
+        setQuery(value);
         // set data
       }
     }, debounceInterval),
@@ -49,10 +69,10 @@ export const Autocomplete = <T,>({
   const handleChange = React.useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       const { value } = e.target;
-      setQuery(value);
+      setInput(value);
       updateSearchQuery(value);
     },
-    [setQuery, updateSearchQuery]
+    [setInput, updateSearchQuery]
   );
 
   // to prevent compilation error, TODO: remove!
@@ -61,7 +81,7 @@ export const Autocomplete = <T,>({
   return (
     <InputComponent
       type="text"
-      value={query}
+      value={input}
       onChange={handleChange}
       placeholder={placeholder}
       onBlur={onFocusOut}

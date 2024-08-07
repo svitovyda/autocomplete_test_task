@@ -23,6 +23,10 @@ export const CitiesScreen: React.FC = () => {
           minAcceptableLength={configJson.minimumSearchQueryLength}
           InputComponent={InputStyled}
           placeholder="Start typing to find cities..."
+          data={[]}
+          autoCalculate
+          dataId={(item: CityMapModel) => item.id}
+          dataLabel={(item: CityMapModel) => item.name}
         />
       </InputContainer>
       <MapView marker={defaultCity} />
