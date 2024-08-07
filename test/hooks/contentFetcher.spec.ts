@@ -6,8 +6,8 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 jest.mock('../../src/services/ApiServise');
 
 describe('useContentFetcher', () => {
-  it('initializes with correct initial state', () => {
-    const { result } = renderHook(() => useContentFetcher(''));
+  it('correctly updates state when idle', () => {
+    const { result } = renderHook(() => useContentFetcher(undefined));
 
     const [state, setQuery] = result.current;
 
@@ -15,8 +15,17 @@ describe('useContentFetcher', () => {
     expect(typeof setQuery).toBe('function');
   });
 
-  it('correctly updates state when fetching data', async () => {
-    ApiService.searchNames = jest.fn(() => Promise.resolve([...MockList]));
+  it('correctly updates state when fetching initial data', () => {
+    const { result } = renderHook(() => useContentFetcher(''));
+
+    const [state, setQuery] = result.current;
+
+    expect(state).toEqual({ isError: false, isLoading: true, data: [] });
+    expect(typeof setQuery).toBe('function');
+  });
+
+  it('correctly updates state when fetching data for query', async () => {
+    ApiService.searchNames<string> = jest.fn(() => Promise.resolve([...MockList]));
 
     const { result } = renderHook(() => useContentFetcher('jquery'));
 

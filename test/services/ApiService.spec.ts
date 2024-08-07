@@ -1,4 +1,4 @@
-import { ApiService, BASE_SEARCH_URL_QUERY } from '../../src/services/ApiServise';
+import { ApiService, BASE_SEARCH_URL_QUERY, SEARCH_URL } from '../../src/services/ApiServise';
 import { MockList } from '../__mock__/mock';
 import fetchMock from 'fetch-mock';
 
@@ -37,5 +37,31 @@ describe('ApiService searchNames', () => {
     });
 
     await expect(ApiService.searchNames('test')).rejects.toThrow('Failed to fetch data');
+  });
+});
+
+describe('ApiService initialSearch', () => {
+  afterEach(() => {
+    fetchMock.restore();
+  });
+
+  it('fetches initial results', async () => {
+    fetchMock.getOnce(SEARCH_URL, {
+      status: 200,
+      body: MockList,
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    const modules = await ApiService.initialSearch();
+
+    expect(modules).toEqual(MockList);
+  });
+
+  it('handles failed fetch', async () => {
+    fetchMock.getOnce(SEARCH_URL, {
+      status: 500,
+    });
+
+    await expect(ApiService.initialSearch()).rejects.toThrow('Failed to fetch data');
   });
 });
