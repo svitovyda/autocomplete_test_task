@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig.strict.json",
+  "compilerOptions": {
+    "rootDir": "."
+  },
+  "include": ["src/**/*", "test/**/*", "scripts/**/*", "./*.ts"]
+}

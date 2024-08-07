@@ -1,0 +1,12 @@
+**/gen/*
+**/output/*
+**/coverage/*
+**/__*
+*.d.ts
+*.json
+**/node_modules/**
+**/lib/*.js
+**/lib/**/*.js.
+webpack.config.js
+jest.config.js
+babel.config.js
