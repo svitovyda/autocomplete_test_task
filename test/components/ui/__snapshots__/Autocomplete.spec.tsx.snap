@@ -3,129 +3,42 @@
 exports[`Autocomplete renders without error 1`] = `
 {
   "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <input
-        placeholder=""
-        type="text"
-        value=""
-      />
-    </div>
-  </body>,
-  "container": <div>
-    <input
-      placeholder=""
-      type="text"
-      value=""
-    />
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
-`;
-
-exports[`Autocomplete renders without error styled 1`] = `
-{
-  "asFragment": [Function],
   "baseElement": .c0 {
-  display: inline-block;
-  padding-block: 1px;
-  padding-inline: 2px;
-  padding: 4px 2px;
-  cursor: text;
-  border: 0;
-  border-radius: 1px;
-  box-shadow: 0 0 1px #aaa;
-  font-size: 18px;
-  font-weight: 400;
   width: 100%;
-  margin: 8px;
-  outline-width: 0;
-  color: inherit;
+  margin: 0;
+  padding: 0;
+  display: block;
+  height: 0;
 }
 
 <body>
     <div>
       <input
-        class="c0"
         placeholder=""
         type="text"
         value=""
       />
+      <div
+        class="c0"
+      />
     </div>
   </body>,
   "container": .c0 {
-  display: inline-block;
-  padding-block: 1px;
-  padding-inline: 2px;
-  padding: 4px 2px;
-  cursor: text;
-  border: 0;
-  border-radius: 1px;
-  box-shadow: 0 0 1px #aaa;
-  font-size: 18px;
-  font-weight: 400;
   width: 100%;
-  margin: 8px;
-  outline-width: 0;
-  color: inherit;
+  margin: 0;
+  padding: 0;
+  display: block;
+  height: 0;
 }
 
 <div>
     <input
-      class="c0"
       placeholder=""
       type="text"
       value=""
+    />
+    <div
+      class="c0"
     />
   </div>,
   "debug": [Function],

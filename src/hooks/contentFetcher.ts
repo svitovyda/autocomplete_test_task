@@ -41,7 +41,11 @@ export const useContentFetcher = <T>(
 ): [FetchState<T>, React.Dispatch<React.SetStateAction<string>>] => {
   const [query, setQuery] = React.useState<string | undefined>(initialQuery);
 
-  const [state, dispatch] = React.useReducer(dataFetchReducer<T>, { isLoading: false, isError: false, data: [] });
+  const [state, dispatch] = React.useReducer(dataFetchReducer<T>, {
+    isLoading: false,
+    isError: false,
+    data: [],
+  });
 
   React.useEffect(() => {
     var didUnmount = false;

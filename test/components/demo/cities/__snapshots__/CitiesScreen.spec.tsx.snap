@@ -4,25 +4,9 @@ exports[`CitiesScreen renders without error 1`] = `
 {
   "asFragment": [Function],
   "baseElement": .c1 {
+  margin: 8px 0;
   display: block;
   width: 100%;
-}
-
-.c2 {
-  display: inline-block;
-  padding-block: 1px;
-  padding-inline: 2px;
-  padding: 4px 2px;
-  cursor: text;
-  border: 0;
-  border-radius: 1px;
-  box-shadow: 0 0 1px #aaa;
-  font-size: 18px;
-  font-weight: 400;
-  width: 100%;
-  margin: 8px;
-  outline-width: 0;
-  color: inherit;
 }
 
 .c0 {
@@ -30,6 +14,14 @@ exports[`CitiesScreen renders without error 1`] = `
   margin: 0 auto;
   padding: 0 10px;
   display: block;
+}
+
+.c2 {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: block;
+  height: 0;
 }
 
 <body>
@@ -44,10 +36,12 @@ exports[`CitiesScreen renders without error 1`] = `
           class="c1"
         >
           <input
-            class="c2"
             placeholder="Start typing to find cities..."
             type="text"
             value=""
+          />
+          <div
+            class="c2"
           />
         </div>
         <div>
@@ -60,25 +54,9 @@ exports[`CitiesScreen renders without error 1`] = `
     </div>
   </body>,
   "container": .c1 {
+  margin: 8px 0;
   display: block;
   width: 100%;
-}
-
-.c2 {
-  display: inline-block;
-  padding-block: 1px;
-  padding-inline: 2px;
-  padding: 4px 2px;
-  cursor: text;
-  border: 0;
-  border-radius: 1px;
-  box-shadow: 0 0 1px #aaa;
-  font-size: 18px;
-  font-weight: 400;
-  width: 100%;
-  margin: 8px;
-  outline-width: 0;
-  color: inherit;
 }
 
 .c0 {
@@ -86,6 +64,14 @@ exports[`CitiesScreen renders without error 1`] = `
   margin: 0 auto;
   padding: 0 10px;
   display: block;
+}
+
+.c2 {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: block;
+  height: 0;
 }
 
 <div>
@@ -99,10 +85,12 @@ exports[`CitiesScreen renders without error 1`] = `
         class="c1"
       >
         <input
-          class="c2"
           placeholder="Start typing to find cities..."
           type="text"
           value=""
+        />
+        <div
+          class="c2"
         />
       </div>
       <div>

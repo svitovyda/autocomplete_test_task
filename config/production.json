@@ -3,6 +3,7 @@
   "searchPath": "/search",
   "searchQuery": "name",
   "minimumSearchQueryLength": 3,
+  "minimumCitiesQueryLength": 2,
   "searchInputDebounse": 1200,
   "cities": [
     { "id": "1", "name": "Amsterdam", "lat": 52.3676, "lng": 4.9041 },

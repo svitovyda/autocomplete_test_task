@@ -2,7 +2,8 @@
   "baseUrl": "https://50735.wiremockapi.cloud",
   "searchPath": "/search",
   "searchQuery": "name",
-  "minimumSearchQueryLength": 1,
+  "minimumSearchQueryLength": 2,
+  "minimumCitiesQueryLength": 1,
   "searchInputDebounse": 600,
   "cities": [
     { "id": "1", "name": "Amsterdam", "lat": 52.3676, "lng": 4.9041 },

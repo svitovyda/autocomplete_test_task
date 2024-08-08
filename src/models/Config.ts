@@ -12,6 +12,7 @@ export interface AppConfig {
   searchPath: string;
   searchQuery: string;
   minimumSearchQueryLength: number;
+  minimumCitiesQueryLength: number;
   searchInputDebounse: number;
   cities: CityMapModel[];
   defaultCityId: CityID;

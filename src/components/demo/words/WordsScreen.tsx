@@ -1,4 +1,4 @@
-import { InputContainer, InputStyled } from '../../../styles/Input';
+import { InputContainer } from '../../../styles/Input';
 import { MainContainer } from '../../../styles/Main';
 import { Autocomplete } from '../../ui/Autocomplete';
 import { LoaderAnimation } from '../../ui/LoaderAnimation';
@@ -13,7 +13,6 @@ export const WordsScreen: React.FC = () => {
         <Autocomplete
           debounceInterval={configJson.searchInputDebounse}
           minAcceptableLength={configJson.minimumSearchQueryLength}
-          InputComponent={InputStyled}
           placeholder="Start typing to find words..."
           data={[]}
         />

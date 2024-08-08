@@ -1,13 +1,20 @@
-export const filterData = (data: ReadonlyArray<string> | string[], query: string, caseSensitive: boolean): string[] => {
+export const filterData = <T>(
+  data: ReadonlyArray<T> | T[],
+  query: string,
+  caseSensitive: boolean,
+  label: (item: T) => string
+): T[] => {
   if (query === '') {
     return [...data];
   }
 
+  const caseQuery = caseSensitive ? query : query.toLowerCase();
+
   return data.filter((item) => {
     if (caseSensitive) {
-      return item.includes(query);
+      return label(item).includes(query);
     } else {
-      return item.toLowerCase().includes(query.toLowerCase());
+      return label(item).toLowerCase().includes(caseQuery);
     }
   });
 };

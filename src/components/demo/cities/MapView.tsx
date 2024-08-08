@@ -19,15 +19,20 @@ export interface MapViewProps {
 }
 
 export const MapView: React.FC<MapViewProps> = ({ marker }) => {
-  const center: LatLngExpression = [marker.lat, marker.lng];
+  const center: LatLngExpression = React.useMemo(() => [marker.lat, marker.lng], [marker]);
 
   return (
-    <MapContainer center={center} zoom={7} style={{ height: '400px', width: '600px', margin: 'auto' }}>
+    <MapContainer
+      key={`MapCenter_${center[0].toFixed(1)}_${center[1].toFixed(1)}`}
+      center={center}
+      zoom={7}
+      style={{ height: '400px', width: '600px', margin: 'auto' }}
+    >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
-      <Marker position={[marker.lat, marker.lng]} icon={defaultIcon}>
+      <Marker key={marker.id} position={[marker.lat, marker.lng]} icon={defaultIcon}>
         <Popup closeOnClick offset={new Point(0, -50)}>
           {marker.name}
         </Popup>

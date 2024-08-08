@@ -1,22 +1,29 @@
-import debounce from 'debounce';
+import { useDataInputManager } from '../../hooks/dataInputQueryManager';
+import { useClickOutside } from '../../hooks/useClickOutside';
+import { SelectContainer } from '../../styles/ui/Autocomplete';
 import * as React from 'react';
 
-const Input: React.FC<React.InputHTMLAttributes<HTMLInputElement>> = (props) => {
-  return <input {...props} />;
-};
+export type ItemID = string | number;
+
+export interface ShowItem {
+  id: ItemID;
+  label: string;
+}
 
 export interface AutocompleteProps<T> {
   onQueryChanged?: (query: string) => void;
-  onItemSelected?: (item: T) => void;
+  onItemSelected?: (item: T | undefined) => void;
   minAcceptableLength?: number;
   debounceInterval?: number;
-  InputComponent?: React.ComponentType<React.InputHTMLAttributes<HTMLInputElement>>;
   placeholder?: string;
   maxOptionsToShow?: number;
+  initialQuery?: string;
   autoCalculate?: boolean;
   data: T[];
   dataLabel?: (item: T) => string;
-  dataId?: (item: T) => string | number;
+  dataId?: (item: T) => ItemID;
+  caseSensitive?: boolean;
+  showInitOnEmptyInput?: boolean;
 }
 /*
  * This component renders input with autocompletion
@@ -32,60 +39,105 @@ export const Autocomplete = <T,>({
   onItemSelected,
   minAcceptableLength = 3,
   debounceInterval = 3,
-  InputComponent = Input,
   placeholder = '',
   maxOptionsToShow = 5,
+  initialQuery = '',
   autoCalculate,
   data,
-  dataLabel = (item: T) => (item as any).toString(),
-  dataId = (item: T) => (item as any).toString(),
-}: AutocompleteProps<T>): JSX.Element => {
-  const [input, setInput] = React.useState(''); // current state of the input
-  const [query, setQuery] = React.useState(''); // deboused query
-  const [labelsToShow, setLabelsToShow] = React.useState<string[]>([]);
+  dataLabel,
+  dataId,
+  caseSensitive = false,
+  showInitOnEmptyInput = true,
+}: AutocompleteProps<T>) => {
+  const [dataInputState, setInput, setSelectedItemId] = useDataInputManager(
+    data,
+    debounceInterval,
+    minAcceptableLength,
+    autoCalculate,
+    dataLabel,
+    dataId,
+    caseSensitive,
+    showInitOnEmptyInput,
+    maxOptionsToShow
+  );
+
+  const [showDropDown, setShowDropDown] = React.useState(false);
+
+  const inputRef = React.useRef<HTMLInputElement>(null);
+  const selectRef = React.useRef<HTMLSelectElement>(null);
+
+  React.useEffect(() => {
+    onItemSelected?.(dataInputState.selectedItem?.itemData);
+    if (dataInputState.selectedItem) {
+      setInput(dataInputState.selectedItem?.itemToShow.label);
+    }
+  }, [dataInputState.selectedItem, onItemSelected, setInput]);
+
+  React.useEffect(() => {
+    onQueryChanged?.(dataInputState.query);
+  }, [dataInputState.query, onQueryChanged]);
+
+  React.useEffect(() => {
+    setInput(initialQuery);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const onFocusIn = React.useCallback(() => {
     // show drop-out, data to show have to be set in `handleChange`
-  }, []);
-
-  const onFocusOut = React.useCallback(() => {
-    // hide drop-out, do not clear query (?)
-    setLabelsToShow([]);
-  }, []);
-
-  // eslint doesn't know how to work with debounce
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const updateSearchQuery = React.useCallback(
-    debounce((value: string) => {
-      if (value.length >= minAcceptableLength) {
-        onQueryChanged?.(value);
-        setQuery(value);
-        // set data
-      }
-    }, debounceInterval),
-    [onQueryChanged, minAcceptableLength, debounceInterval]
-  );
+    setShowDropDown(true);
+    if (inputRef.current && dataInputState.input) {
+      inputRef.current.setSelectionRange(0, dataInputState.input.length);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectRef?.current, inputRef?.current, dataInputState.input, dataInputState.itemsToShow]);
 
   const handleChange = React.useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       const { value } = e.target;
       setInput(value);
-      updateSearchQuery(value);
     },
-    [setInput, updateSearchQuery]
+    [setInput]
   );
 
-  // to prevent compilation error, TODO: remove!
-  console.log(onItemSelected, maxOptionsToShow);
+  const onClickOutside = React.useCallback(() => {
+    setShowDropDown(false);
+  }, []);
+
+  useClickOutside([selectRef, inputRef], onClickOutside);
+
+  const onSelectItem = React.useCallback(
+    (id: ItemID) => {
+      setSelectedItemId(id);
+      setShowDropDown(false);
+    },
+    [setSelectedItemId]
+  );
 
   return (
-    <InputComponent
-      type="text"
-      value={input}
-      onChange={handleChange}
-      placeholder={placeholder}
-      onBlur={onFocusOut}
-      onFocus={onFocusIn}
-    />
+    <>
+      <input
+        ref={inputRef}
+        type="text"
+        value={dataInputState.input}
+        onChange={handleChange}
+        placeholder={placeholder}
+        onFocus={onFocusIn}
+      />
+      <SelectContainer>
+        {showDropDown && dataInputState.itemsToShow.length > 0 && (
+          <select
+            ref={selectRef}
+            onChange={(e: React.ChangeEvent<HTMLSelectElement>) => onSelectItem(e.target.value)}
+            size={Math.max(dataInputState.itemsToShow.length, 2)} // with only one item the select height gets too small and behaves weird
+          >
+            {dataInputState.itemsToShow.map((item) => (
+              <option key={item.id} value={item.id}>
+                {item.label}
+              </option>
+            ))}
+          </select>
+        )}
+      </SelectContainer>
+    </>
   );
 };
