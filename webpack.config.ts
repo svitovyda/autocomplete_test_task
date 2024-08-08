@@ -124,7 +124,8 @@ const createDevelopmentConfig = () => ({
     hints: 'warning',
     maxAssetSize: 200_000,
     maxEntrypointSize: 400_000,
-    assetFilter: (assetFilename: string) => assetFilename.endsWith('.css') || assetFilename.endsWith('.js'),
+    assetFilter: (assetFilename: string) =>
+      assetFilename.endsWith('.css') || assetFilename.endsWith('.js'),
   },
 });
 

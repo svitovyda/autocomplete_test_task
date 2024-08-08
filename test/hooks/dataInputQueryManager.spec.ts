@@ -1,4 +1,8 @@
-import { type ShowItem, convertToShow, useDataInputManager } from '../../src/hooks/dataInputQueryManager';
+import {
+  type ShowItem,
+  convertToShow,
+  useDataInputManager,
+} from '../../src/hooks/dataInputQueryManager';
 import { MockList } from '../__mock__/mock';
 import { act, renderHook, waitFor } from '@testing-library/react';
 
@@ -98,7 +102,9 @@ describe('useDataInputManager', () => {
   });
 
   it('correctly updates state when idle, set data, no showInitOnEmptyInput', () => {
-    const { result } = renderHook(() => useDataInputManager<string>(MockList, 1, 2, true, eq, eq, false, false, 5));
+    const { result } = renderHook(() =>
+      useDataInputManager<string>(MockList, 1, 2, true, eq, eq, false, false, 5)
+    );
 
     const [state, setInput, setItemId] = result.current;
 
@@ -108,7 +114,9 @@ describe('useDataInputManager', () => {
   });
 
   it('correctly updates state and query when input changes to non-empty string', async () => {
-    const { result } = renderHook(() => useDataInputManager<string>(MockList, 1, 2, true, eq, eq, false, false));
+    const { result } = renderHook(() =>
+      useDataInputManager<string>(MockList, 1, 2, true, eq, eq, false, false)
+    );
 
     const [state, setInput, setItemId] = result.current;
 
@@ -207,7 +215,9 @@ describe('useDataInputManager', () => {
   });
 
   it('correctly updates state and query when input changes to empty string', async () => {
-    const { result } = renderHook(() => useDataInputManager<string>(MockList, 1, 2, true, eq, eq, false, false));
+    const { result } = renderHook(() =>
+      useDataInputManager<string>(MockList, 1, 2, true, eq, eq, false, false)
+    );
 
     const [state, setInput, setItemId] = result.current;
 
@@ -258,7 +268,12 @@ describe('useDataInputManager', () => {
 
     const items = MockList.slice(0, 5).map((s) => ({ id: s, label: s }));
 
-    expect(state).toEqual({ input: '', query: '', itemsToShow: items, selectedItem: undefined });
+    expect(state).toEqual({
+      input: '',
+      query: '',
+      itemsToShow: items,
+      selectedItem: undefined,
+    });
     expect(typeof setInput).toBe('function');
     expect(typeof setItemId).toBe('function');
 
@@ -293,13 +308,20 @@ describe('useDataInputManager', () => {
   });
 
   it('should recalculate itemsToShow if autoCalculate and query changed, case sensitive', async () => {
-    const { result } = renderHook(() => useDataInputManager<string>(MockList, 1, 3, true, eq, eq, true));
+    const { result } = renderHook(() =>
+      useDataInputManager<string>(MockList, 1, 3, true, eq, eq, true)
+    );
 
     const [state, setInput, setItemId] = result.current;
 
     const items = MockList.slice(0, 5).map((s) => ({ id: s, label: s }));
 
-    expect(state).toEqual({ input: '', query: '', itemsToShow: items, selectedItem: undefined });
+    expect(state).toEqual({
+      input: '',
+      query: '',
+      itemsToShow: items,
+      selectedItem: undefined,
+    });
     expect(typeof setInput).toBe('function');
     expect(typeof setItemId).toBe('function');
 
@@ -336,13 +358,20 @@ describe('useDataInputManager', () => {
   it('should correctly work with data as list of objects, dataLabel, dataId', async () => {
     const data: TestItem[] = MockList.map((s, i) => ({ name: s, id: i }));
 
-    const { result } = renderHook(() => useDataInputManager<TestItem>(data, 1, 3, true, toLabel, toId, true, true, 4));
+    const { result } = renderHook(() =>
+      useDataInputManager<TestItem>(data, 1, 3, true, toLabel, toId, true, true, 4)
+    );
 
     const [state, setInput, setItemId] = result.current;
 
     const items = data.slice(0, 4).map((item) => ({ id: item.id, label: item.name }));
 
-    expect(state).toEqual({ input: '', query: '', itemsToShow: items, selectedItem: undefined });
+    expect(state).toEqual({
+      input: '',
+      query: '',
+      itemsToShow: items,
+      selectedItem: undefined,
+    });
     expect(typeof setInput).toBe('function');
     expect(typeof setItemId).toBe('function');
 
@@ -378,13 +407,20 @@ describe('useDataInputManager', () => {
   it('should react on setSelectedItemId, items are objects', async () => {
     const data: TestItem[] = MockList.map((s, i) => ({ name: s, id: i }));
 
-    const { result } = renderHook(() => useDataInputManager<TestItem>(data, 1, 3, true, toLabel, toId, true, true, 4));
+    const { result } = renderHook(() =>
+      useDataInputManager<TestItem>(data, 1, 3, true, toLabel, toId, true, true, 4)
+    );
 
     const [state, setInput, setItemId] = result.current;
 
     const items = data.slice(0, 4).map((item) => ({ id: item.id, label: item.name }));
 
-    expect(state).toEqual({ input: '', query: '', itemsToShow: items, selectedItem: undefined });
+    expect(state).toEqual({
+      input: '',
+      query: '',
+      itemsToShow: items,
+      selectedItem: undefined,
+    });
     expect(typeof setInput).toBe('function');
     expect(typeof setItemId).toBe('function');
 

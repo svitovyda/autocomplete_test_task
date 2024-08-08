@@ -56,7 +56,10 @@ interface AutocompleteDataInputAction<T> {
   payload: DataInputPayload<T>;
 }
 
-const recalculateShowItems = <T>(state: DataInputState<T>, payload: DataInputPayload<T>): DataInputState<T> => {
+const recalculateShowItems = <T>(
+  state: DataInputState<T>,
+  payload: DataInputPayload<T>
+): DataInputState<T> => {
   const {
     query = '',
     autoCalculate,
@@ -89,7 +92,10 @@ const recalculateShowItems = <T>(state: DataInputState<T>, payload: DataInputPay
   return newState;
 };
 
-const recalculateSelectedItem = <T>(state: DataInputState<T>, payload: DataInputPayload<T>): DataInputState<T> => {
+const recalculateSelectedItem = <T>(
+  state: DataInputState<T>,
+  payload: DataInputPayload<T>
+): DataInputState<T> => {
   const { selectedItemId: id = '', dictionary = {} } = payload;
 
   const newState: DataInputState<T> = { ...state, selectedItem: undefined };
@@ -128,7 +134,11 @@ export const useDataInputManager = <T>(
   caseSensitive: boolean = false,
   showInitOnEmptyInput: boolean = true,
   maxOptionsToShow: number = 5
-): [DataInputState<T>, React.Dispatch<React.SetStateAction<string>>, React.Dispatch<React.SetStateAction<ItemID>>] => {
+): [
+  DataInputState<T>,
+  React.Dispatch<React.SetStateAction<string>>,
+  React.Dispatch<React.SetStateAction<ItemID>>,
+] => {
   const [input, setInput] = React.useState(''); // current state of the input
 
   const [selectedItemId, setSelectedItemId] = React.useState<ItemID | undefined>(undefined);

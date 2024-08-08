@@ -1,4 +1,9 @@
-import { LoaderContainer, LoaderRing, LoaderRingInner, LoaderTextContainer } from '../../styles/ui/LoaderAnimation';
+import {
+  LoaderContainer,
+  LoaderRing,
+  LoaderRingInner,
+  LoaderTextContainer,
+} from '../../styles/ui/LoaderAnimation';
 import * as React from 'react';
 
 export const LoaderAnimation: React.FC = () => {
