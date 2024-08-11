@@ -1,10 +1,14 @@
+import type { DataArrayType } from '../hooks/autocomplete/useDataShow';
+
+export type QueryType = string | undefined;
+
 export const filterData = <T>(
-  data: ReadonlyArray<T> | T[],
-  query: string,
+  data: DataArrayType<T>,
+  query: QueryType,
   caseSensitive: boolean,
   label: (item: T) => string
 ): T[] => {
-  if (query === '') {
+  if (!query) {
     return [...data];
   }
 

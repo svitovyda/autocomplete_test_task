@@ -1,46 +1,87 @@
-import type { CityID, CityMapModel } from '../../../models/Config';
+import type { AppConfig, CityID } from '../../../models/Config';
+import {
+  CONTINENTS,
+  type CityMapModel,
+  type ContinentType,
+  continentCities,
+} from '../../../models/Continents';
+import { AutoselectContainer, AutoselectsContainer, Label } from '../../../styles/Cities';
 import { InputContainer } from '../../../styles/Input';
 import { MainContainer } from '../../../styles/Main';
-import { Autocomplete } from '../../ui/Autocomplete';
+import { Autocomplete } from '../../ui/autocomplete/Autocomplete';
 import { MapView } from './MapView';
 import configJson from 'config';
 import * as React from 'react';
 
-const findCity = (cities: CityMapModel[], id: CityID): CityMapModel => {
-  const index = cities.findIndex((c) => c.id === id);
-  return index === -1 ? cities[0]! : cities[index]!;
+const config: AppConfig = configJson;
+
+const findCity = (cities: CityMapModel[], id?: CityID): CityMapModel | undefined => {
+  if (!id) return undefined;
+  return cities[cities.findIndex((c) => c.id === id)];
 };
 
-const defaultCity: CityMapModel = findCity(configJson.cities, configJson.defaultCityId);
+const defaultCity: CityMapModel | undefined =
+  config.defaultContinent && config.defaultCityId
+    ? findCity(continentCities[config.defaultContinent], config.defaultCityId)
+    : undefined;
 
 const dataId = (item: CityMapModel): CityID => item.id;
 const dataLabel = (item: CityMapModel): string => item.name;
 
 export const CitiesScreen: React.FC = () => {
-  const [city, setCity] = React.useState<CityMapModel>(defaultCity);
+  const [continent, setContinent] = React.useState<ContinentType | undefined>(
+    config.defaultContinent
+  );
+  const [city, setCity] = React.useState<CityMapModel | undefined>(defaultCity);
 
-  const onElementSelected = React.useCallback((item: CityMapModel) => {
-    if (item) {
-      setCity(item);
-    }
-  }, []);
+  const onContinentSelected = React.useCallback(
+    (item: ContinentType) => {
+      if (item && item !== continent) {
+        setContinent(item);
+        setCity(undefined);
+      }
+    },
+    [continent]
+  );
 
   return (
     <MainContainer>
       <h1>Static Data: Cities</h1>
-      <InputContainer>
-        <Autocomplete
-          debounceInterval={configJson.searchInputDebounse}
-          minAcceptableLength={configJson.minimumCitiesQueryLength}
-          placeholder="Start typing to find cities..."
-          data={configJson.cities}
-          autoCalculate
-          dataId={dataId}
-          dataLabel={dataLabel}
-          onItemSelected={onElementSelected}
-        />
-      </InputContainer>
-      <MapView marker={city} />
+      <AutoselectsContainer>
+        <AutoselectContainer>
+          <InputContainer>
+            <Label>Select continent:</Label>
+            <Autocomplete
+              debounceInterval={config.searchInputDebounse}
+              minAcceptableLength={config.minimumCitiesQueryLength}
+              placeholder="Start typing to find continent..."
+              data={CONTINENTS}
+              autoCalculate
+              onItemSelected={onContinentSelected}
+              maxOptionsToShow={6}
+              initialInput={continent}
+            />
+          </InputContainer>
+        </AutoselectContainer>
+        <AutoselectContainer>
+          <InputContainer>
+            <Label>Select city:</Label>
+            <Autocomplete
+              debounceInterval={configJson.searchInputDebounse}
+              minAcceptableLength={configJson.minimumCitiesQueryLength}
+              placeholder="Start typing to find cities..."
+              data={continent ? continentCities[continent] : []}
+              autoCalculate
+              dataId={dataId}
+              dataLabel={dataLabel}
+              onItemSelected={setCity}
+              maxOptionsToShow={9}
+              initialInput={city?.name || ''}
+            />
+          </InputContainer>
+        </AutoselectContainer>
+      </AutoselectsContainer>
+      <MapView marker={city} continent={continent} />
     </MainContainer>
   );
 };
