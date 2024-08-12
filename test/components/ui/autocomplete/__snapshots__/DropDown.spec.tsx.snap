@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DropDown renders without error empty 1`] = `
+exports[`DropDown renders with loading animation 1`] = `
 {
   "asFragment": [Function],
   "baseElement": .c0 {
@@ -14,7 +14,6 @@ exports[`DropDown renders without error empty 1`] = `
 .c1 {
   position: absolute;
   box-sizing: border-box;
-  list-style: 'none';
   width: 200px;
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
@@ -23,7 +22,6 @@ exports[`DropDown renders without error empty 1`] = `
   overflow-y: auto;
   margin: 0;
   padding: 0;
-  list-style-type: none;
   background-color: white;
   border: 1px solid #aaa;
   border-radius: 3px;
@@ -33,6 +31,7 @@ exports[`DropDown renders without error empty 1`] = `
   -moz-scrollbar-width: none;
   -ms-scrollbar-width: none;
   scrollbar-width: none;
+  overflow: hidden;
 }
 
 <body>
@@ -40,9 +39,13 @@ exports[`DropDown renders without error empty 1`] = `
       <div
         class="c0"
       >
-        <ul
+        <div
           class="c1"
-        />
+        >
+          <div>
+            ...
+          </div>
+        </div>
       </div>
     </div>
   </body>,
@@ -57,7 +60,6 @@ exports[`DropDown renders without error empty 1`] = `
 .c1 {
   position: absolute;
   box-sizing: border-box;
-  list-style: 'none';
   width: 200px;
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
@@ -66,12 +68,183 @@ exports[`DropDown renders without error empty 1`] = `
   overflow-y: auto;
   margin: 0;
   padding: 0;
-  list-style-type: none;
   background-color: white;
   border: 1px solid #aaa;
   border-radius: 3px;
   box-shadow: 3px 3px 5px 0 #999;
   z-index: 100000;
+  -webkit-scrollbar-width: none;
+  -moz-scrollbar-width: none;
+  -ms-scrollbar-width: none;
+  scrollbar-width: none;
+  overflow: hidden;
+}
+
+<div>
+    <div
+      class="c0"
+    >
+      <div
+        class="c1"
+      >
+        <div>
+          ...
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`DropDown renders without error empty 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": .c0 {
+  width: 100px;
+  margin: 0;
+  padding: 0;
+  display: block;
+  height: 0;
+}
+
+.c1 {
+  position: absolute;
+  box-sizing: border-box;
+  width: 200px;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  max-height: 300px;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  box-shadow: 3px 3px 5px 0 #999;
+  z-index: 100000;
+  -webkit-scrollbar-width: none;
+  -moz-scrollbar-width: none;
+  -ms-scrollbar-width: none;
+  scrollbar-width: none;
+  overflow: hidden;
+}
+
+.c2 {
+  list-style: 'none';
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  -webkit-scrollbar-width: none;
+  -moz-scrollbar-width: none;
+  -ms-scrollbar-width: none;
+  scrollbar-width: none;
+}
+
+<body>
+    <div>
+      <div
+        class="c0"
+      >
+        <div
+          class="c1"
+        >
+          <ul
+            class="c2"
+          />
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": .c0 {
+  width: 100px;
+  margin: 0;
+  padding: 0;
+  display: block;
+  height: 0;
+}
+
+.c1 {
+  position: absolute;
+  box-sizing: border-box;
+  width: 200px;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  max-height: 300px;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  box-shadow: 3px 3px 5px 0 #999;
+  z-index: 100000;
+  -webkit-scrollbar-width: none;
+  -moz-scrollbar-width: none;
+  -ms-scrollbar-width: none;
+  scrollbar-width: none;
+  overflow: hidden;
+}
+
+.c2 {
+  list-style: 'none';
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
   -webkit-scrollbar-width: none;
   -moz-scrollbar-width: none;
   -ms-scrollbar-width: none;
@@ -82,9 +255,13 @@ exports[`DropDown renders without error empty 1`] = `
     <div
       class="c0"
     >
-      <ul
+      <div
         class="c1"
-      />
+      >
+        <ul
+          class="c2"
+        />
+      </div>
     </div>
   </div>,
   "debug": [Function],
@@ -155,7 +332,6 @@ exports[`DropDown renders without error objects, no query 1`] = `
 .c1 {
   position: absolute;
   box-sizing: border-box;
-  list-style: 'none';
   width: 200px;
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
@@ -164,7 +340,6 @@ exports[`DropDown renders without error objects, no query 1`] = `
   overflow-y: auto;
   margin: 0;
   padding: 0;
-  list-style-type: none;
   background-color: white;
   border: 1px solid #aaa;
   border-radius: 3px;
@@ -174,9 +349,22 @@ exports[`DropDown renders without error objects, no query 1`] = `
   -moz-scrollbar-width: none;
   -ms-scrollbar-width: none;
   scrollbar-width: none;
+  overflow: hidden;
 }
 
 .c2 {
+  list-style: 'none';
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  -webkit-scrollbar-width: none;
+  -moz-scrollbar-width: none;
+  -ms-scrollbar-width: none;
+  scrollbar-width: none;
+}
+
+.c3 {
   padding: 4px 10px;
   font-size: 16px;
   font-weight: 400;
@@ -184,7 +372,7 @@ exports[`DropDown renders without error objects, no query 1`] = `
   cursor: pointer;
 }
 
-.c2:hover {
+.c3:hover {
   background-color: #d0d0d0;
   border: '1px solid #ccc';
 }
@@ -194,115 +382,119 @@ exports[`DropDown renders without error objects, no query 1`] = `
       <div
         class="c0"
       >
-        <ul
+        <div
           class="c1"
         >
-          <li
+          <ul
             class="c2"
           >
-            abc_test_def
-          </li>
-          <li
-            class="c2"
-          >
-            no_t_e_s_t
-          </li>
-          <li
-            class="c2"
-          >
-            TestRandom1
-          </li>
-          <li
-            class="c2"
-          >
-            another-test23
-          </li>
-          <li
-            class="c2"
-          >
-            thisIs_test4
-          </li>
-          <li
-            class="c2"
-          >
-            testxyzabc_Test
-          </li>
-          <li
-            class="c2"
-          >
-            Ghi_test1jktest2ltest3
-          </li>
-          <li
-            class="c2"
-          >
-            lmntestop
-          </li>
-          <li
-            class="c2"
-          >
-            uv_test_wxyz
-          </li>
-          <li
-            class="c2"
-          >
-            test123abc
-          </li>
-          <li
-            class="c2"
-          >
-            opqtestrst
-          </li>
-          <li
-            class="c2"
-          >
-            word_with_test
-          </li>
-          <li
-            class="c2"
-          >
-            thetestinmiddle
-          </li>
-          <li
-            class="c2"
-          >
-            testStartWithTest
-          </li>
-          <li
-            class="c2"
-          >
-            endwithtest
-          </li>
-          <li
-            class="c2"
-          >
-            more_test_here
-          </li>
-          <li
-            class="c2"
-          >
-            A_test_bc_test
-          </li>
-          <li
-            class="c2"
-          >
-            randteststr
-          </li>
-          <li
-            class="c2"
-          >
-            sometesttxt
-          </li>
-          <li
-            class="c2"
-          >
-            stillteston6
-          </li>
-          <li
-            class="c2"
-          >
-            yet_another_test
-          </li>
-        </ul>
+            <li
+              class="c3"
+            >
+              abc_test_def
+            </li>
+            <li
+              class="c3"
+            >
+              no_t_e_s_t
+            </li>
+            <li
+              class="c3"
+            >
+              TestRandom1
+            </li>
+            <li
+              class="c3"
+            >
+              another-test23
+            </li>
+            <li
+              class="c3"
+            >
+              thisIs_test4
+            </li>
+            <li
+              class="c3"
+            >
+              testxyzabc_Test
+            </li>
+            <li
+              class="c3"
+            >
+              Ghi_test1jktest2ltest3
+            </li>
+            <li
+              class="c3"
+            >
+              lmntestop
+            </li>
+            <li
+              class="c3"
+            >
+              uv_test_wxyz
+            </li>
+            <li
+              class="c3"
+            >
+              test123abc
+            </li>
+            <li
+              class="c3"
+            >
+              opqtestrst
+            </li>
+            <li
+              class="c3"
+            >
+              word_with_test
+            </li>
+            <li
+              class="c3"
+            >
+              thetestinmiddle
+            </li>
+            <li
+              class="c3"
+            >
+              testStartWithTest
+            </li>
+            <li
+              class="c3"
+            >
+              endwithtest
+            </li>
+            <li
+              class="c3"
+            >
+              more_test_here
+            </li>
+            <li
+              class="c3"
+            >
+              A_test_bc_test
+            </li>
+            <li
+              class="c3"
+            >
+              randteststr
+            </li>
+            <li
+              class="c3"
+            >
+              sometesttxt
+            </li>
+            <li
+              class="c3"
+            >
+              stillteston6
+            </li>
+            <li
+              class="c3"
+            >
+              yet_another_test
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </body>,
@@ -317,7 +509,6 @@ exports[`DropDown renders without error objects, no query 1`] = `
 .c1 {
   position: absolute;
   box-sizing: border-box;
-  list-style: 'none';
   width: 200px;
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
@@ -326,7 +517,6 @@ exports[`DropDown renders without error objects, no query 1`] = `
   overflow-y: auto;
   margin: 0;
   padding: 0;
-  list-style-type: none;
   background-color: white;
   border: 1px solid #aaa;
   border-radius: 3px;
@@ -336,9 +526,22 @@ exports[`DropDown renders without error objects, no query 1`] = `
   -moz-scrollbar-width: none;
   -ms-scrollbar-width: none;
   scrollbar-width: none;
+  overflow: hidden;
 }
 
 .c2 {
+  list-style: 'none';
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  -webkit-scrollbar-width: none;
+  -moz-scrollbar-width: none;
+  -ms-scrollbar-width: none;
+  scrollbar-width: none;
+}
+
+.c3 {
   padding: 4px 10px;
   font-size: 16px;
   font-weight: 400;
@@ -346,7 +549,7 @@ exports[`DropDown renders without error objects, no query 1`] = `
   cursor: pointer;
 }
 
-.c2:hover {
+.c3:hover {
   background-color: #d0d0d0;
   border: '1px solid #ccc';
 }
@@ -355,115 +558,119 @@ exports[`DropDown renders without error objects, no query 1`] = `
     <div
       class="c0"
     >
-      <ul
+      <div
         class="c1"
       >
-        <li
+        <ul
           class="c2"
         >
-          abc_test_def
-        </li>
-        <li
-          class="c2"
-        >
-          no_t_e_s_t
-        </li>
-        <li
-          class="c2"
-        >
-          TestRandom1
-        </li>
-        <li
-          class="c2"
-        >
-          another-test23
-        </li>
-        <li
-          class="c2"
-        >
-          thisIs_test4
-        </li>
-        <li
-          class="c2"
-        >
-          testxyzabc_Test
-        </li>
-        <li
-          class="c2"
-        >
-          Ghi_test1jktest2ltest3
-        </li>
-        <li
-          class="c2"
-        >
-          lmntestop
-        </li>
-        <li
-          class="c2"
-        >
-          uv_test_wxyz
-        </li>
-        <li
-          class="c2"
-        >
-          test123abc
-        </li>
-        <li
-          class="c2"
-        >
-          opqtestrst
-        </li>
-        <li
-          class="c2"
-        >
-          word_with_test
-        </li>
-        <li
-          class="c2"
-        >
-          thetestinmiddle
-        </li>
-        <li
-          class="c2"
-        >
-          testStartWithTest
-        </li>
-        <li
-          class="c2"
-        >
-          endwithtest
-        </li>
-        <li
-          class="c2"
-        >
-          more_test_here
-        </li>
-        <li
-          class="c2"
-        >
-          A_test_bc_test
-        </li>
-        <li
-          class="c2"
-        >
-          randteststr
-        </li>
-        <li
-          class="c2"
-        >
-          sometesttxt
-        </li>
-        <li
-          class="c2"
-        >
-          stillteston6
-        </li>
-        <li
-          class="c2"
-        >
-          yet_another_test
-        </li>
-      </ul>
+          <li
+            class="c3"
+          >
+            abc_test_def
+          </li>
+          <li
+            class="c3"
+          >
+            no_t_e_s_t
+          </li>
+          <li
+            class="c3"
+          >
+            TestRandom1
+          </li>
+          <li
+            class="c3"
+          >
+            another-test23
+          </li>
+          <li
+            class="c3"
+          >
+            thisIs_test4
+          </li>
+          <li
+            class="c3"
+          >
+            testxyzabc_Test
+          </li>
+          <li
+            class="c3"
+          >
+            Ghi_test1jktest2ltest3
+          </li>
+          <li
+            class="c3"
+          >
+            lmntestop
+          </li>
+          <li
+            class="c3"
+          >
+            uv_test_wxyz
+          </li>
+          <li
+            class="c3"
+          >
+            test123abc
+          </li>
+          <li
+            class="c3"
+          >
+            opqtestrst
+          </li>
+          <li
+            class="c3"
+          >
+            word_with_test
+          </li>
+          <li
+            class="c3"
+          >
+            thetestinmiddle
+          </li>
+          <li
+            class="c3"
+          >
+            testStartWithTest
+          </li>
+          <li
+            class="c3"
+          >
+            endwithtest
+          </li>
+          <li
+            class="c3"
+          >
+            more_test_here
+          </li>
+          <li
+            class="c3"
+          >
+            A_test_bc_test
+          </li>
+          <li
+            class="c3"
+          >
+            randteststr
+          </li>
+          <li
+            class="c3"
+          >
+            sometesttxt
+          </li>
+          <li
+            class="c3"
+          >
+            stillteston6
+          </li>
+          <li
+            class="c3"
+          >
+            yet_another_test
+          </li>
+        </ul>
+      </div>
     </div>
   </div>,
   "debug": [Function],
@@ -534,7 +741,6 @@ exports[`DropDown renders without error objects, query="test" 1`] = `
 .c1 {
   position: absolute;
   box-sizing: border-box;
-  list-style: 'none';
   width: 200px;
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
@@ -543,7 +749,6 @@ exports[`DropDown renders without error objects, query="test" 1`] = `
   overflow-y: auto;
   margin: 0;
   padding: 0;
-  list-style-type: none;
   background-color: white;
   border: 1px solid #aaa;
   border-radius: 3px;
@@ -553,9 +758,22 @@ exports[`DropDown renders without error objects, query="test" 1`] = `
   -moz-scrollbar-width: none;
   -ms-scrollbar-width: none;
   scrollbar-width: none;
+  overflow: hidden;
 }
 
 .c2 {
+  list-style: 'none';
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  -webkit-scrollbar-width: none;
+  -moz-scrollbar-width: none;
+  -ms-scrollbar-width: none;
+  scrollbar-width: none;
+}
+
+.c3 {
   padding: 4px 10px;
   font-size: 16px;
   font-weight: 400;
@@ -563,12 +781,12 @@ exports[`DropDown renders without error objects, query="test" 1`] = `
   cursor: pointer;
 }
 
-.c2:hover {
+.c3:hover {
   background-color: #d0d0d0;
   border: '1px solid #ccc';
 }
 
-.c3 {
+.c4 {
   background-color: yellow;
   font-weight: bold;
 }
@@ -578,255 +796,259 @@ exports[`DropDown renders without error objects, query="test" 1`] = `
       <div
         class="c0"
       >
-        <ul
+        <div
           class="c1"
         >
-          <li
+          <ul
             class="c2"
           >
-            abc_
-            <span
+            <li
               class="c3"
             >
-              test
-            </span>
-            _def
-          </li>
-          <li
-            class="c2"
-          >
-            no_t_e_s_t
-          </li>
-          <li
-            class="c2"
-          >
-            <span
+              abc_
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              _def
+            </li>
+            <li
               class="c3"
             >
-              Test
-            </span>
-            Random1
-          </li>
-          <li
-            class="c2"
-          >
-            another-
-            <span
+              no_t_e_s_t
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-            23
-          </li>
-          <li
-            class="c2"
-          >
-            thisIs_
-            <span
+              <span
+                class="c4"
+              >
+                Test
+              </span>
+              Random1
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-            4
-          </li>
-          <li
-            class="c2"
-          >
-            <span
+              another-
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              23
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-            xyzabc_
-            <span
+              thisIs_
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              4
+            </li>
+            <li
               class="c3"
             >
-              Test
-            </span>
-          </li>
-          <li
-            class="c2"
-          >
-            Ghi_
-            <span
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              xyzabc_
+              <span
+                class="c4"
+              >
+                Test
+              </span>
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-            1jk
-            <span
+              Ghi_
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              1jk
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              2l
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              3
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-            2l
-            <span
+              lmn
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              op
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-            3
-          </li>
-          <li
-            class="c2"
-          >
-            lmn
-            <span
+              uv_
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              _wxyz
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-            op
-          </li>
-          <li
-            class="c2"
-          >
-            uv_
-            <span
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              123abc
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-            _wxyz
-          </li>
-          <li
-            class="c2"
-          >
-            <span
+              opq
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              rst
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-            123abc
-          </li>
-          <li
-            class="c2"
-          >
-            opq
-            <span
+              word_with_
+              <span
+                class="c4"
+              >
+                test
+              </span>
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-            rst
-          </li>
-          <li
-            class="c2"
-          >
-            word_with_
-            <span
+              the
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              inmiddle
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-          </li>
-          <li
-            class="c2"
-          >
-            the
-            <span
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              StartWith
+              <span
+                class="c4"
+              >
+                Test
+              </span>
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-            inmiddle
-          </li>
-          <li
-            class="c2"
-          >
-            <span
+              endwith
+              <span
+                class="c4"
+              >
+                test
+              </span>
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-            StartWith
-            <span
+              more_
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              _here
+            </li>
+            <li
               class="c3"
             >
-              Test
-            </span>
-          </li>
-          <li
-            class="c2"
-          >
-            endwith
-            <span
+              A_
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              _bc_
+              <span
+                class="c4"
+              >
+                test
+              </span>
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-          </li>
-          <li
-            class="c2"
-          >
-            more_
-            <span
+              rand
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              str
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-            _here
-          </li>
-          <li
-            class="c2"
-          >
-            A_
-            <span
+              some
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              txt
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-            _bc_
-            <span
+              still
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              on6
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-          </li>
-          <li
-            class="c2"
-          >
-            rand
-            <span
-              class="c3"
-            >
-              test
-            </span>
-            str
-          </li>
-          <li
-            class="c2"
-          >
-            some
-            <span
-              class="c3"
-            >
-              test
-            </span>
-            txt
-          </li>
-          <li
-            class="c2"
-          >
-            still
-            <span
-              class="c3"
-            >
-              test
-            </span>
-            on6
-          </li>
-          <li
-            class="c2"
-          >
-            yet_another_
-            <span
-              class="c3"
-            >
-              test
-            </span>
-          </li>
-        </ul>
+              yet_another_
+              <span
+                class="c4"
+              >
+                test
+              </span>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </body>,
@@ -841,7 +1063,6 @@ exports[`DropDown renders without error objects, query="test" 1`] = `
 .c1 {
   position: absolute;
   box-sizing: border-box;
-  list-style: 'none';
   width: 200px;
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
@@ -850,7 +1071,6 @@ exports[`DropDown renders without error objects, query="test" 1`] = `
   overflow-y: auto;
   margin: 0;
   padding: 0;
-  list-style-type: none;
   background-color: white;
   border: 1px solid #aaa;
   border-radius: 3px;
@@ -860,9 +1080,22 @@ exports[`DropDown renders without error objects, query="test" 1`] = `
   -moz-scrollbar-width: none;
   -ms-scrollbar-width: none;
   scrollbar-width: none;
+  overflow: hidden;
 }
 
 .c2 {
+  list-style: 'none';
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  -webkit-scrollbar-width: none;
+  -moz-scrollbar-width: none;
+  -ms-scrollbar-width: none;
+  scrollbar-width: none;
+}
+
+.c3 {
   padding: 4px 10px;
   font-size: 16px;
   font-weight: 400;
@@ -870,12 +1103,12 @@ exports[`DropDown renders without error objects, query="test" 1`] = `
   cursor: pointer;
 }
 
-.c2:hover {
+.c3:hover {
   background-color: #d0d0d0;
   border: '1px solid #ccc';
 }
 
-.c3 {
+.c4 {
   background-color: yellow;
   font-weight: bold;
 }
@@ -884,255 +1117,259 @@ exports[`DropDown renders without error objects, query="test" 1`] = `
     <div
       class="c0"
     >
-      <ul
+      <div
         class="c1"
       >
-        <li
+        <ul
           class="c2"
         >
-          abc_
-          <span
+          <li
             class="c3"
           >
-            test
-          </span>
-          _def
-        </li>
-        <li
-          class="c2"
-        >
-          no_t_e_s_t
-        </li>
-        <li
-          class="c2"
-        >
-          <span
+            abc_
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            _def
+          </li>
+          <li
             class="c3"
           >
-            Test
-          </span>
-          Random1
-        </li>
-        <li
-          class="c2"
-        >
-          another-
-          <span
+            no_t_e_s_t
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-          23
-        </li>
-        <li
-          class="c2"
-        >
-          thisIs_
-          <span
+            <span
+              class="c4"
+            >
+              Test
+            </span>
+            Random1
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-          4
-        </li>
-        <li
-          class="c2"
-        >
-          <span
+            another-
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            23
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-          xyzabc_
-          <span
+            thisIs_
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            4
+          </li>
+          <li
             class="c3"
           >
-            Test
-          </span>
-        </li>
-        <li
-          class="c2"
-        >
-          Ghi_
-          <span
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            xyzabc_
+            <span
+              class="c4"
+            >
+              Test
+            </span>
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-          1jk
-          <span
+            Ghi_
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            1jk
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            2l
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            3
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-          2l
-          <span
+            lmn
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            op
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-          3
-        </li>
-        <li
-          class="c2"
-        >
-          lmn
-          <span
+            uv_
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            _wxyz
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-          op
-        </li>
-        <li
-          class="c2"
-        >
-          uv_
-          <span
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            123abc
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-          _wxyz
-        </li>
-        <li
-          class="c2"
-        >
-          <span
+            opq
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            rst
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-          123abc
-        </li>
-        <li
-          class="c2"
-        >
-          opq
-          <span
+            word_with_
+            <span
+              class="c4"
+            >
+              test
+            </span>
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-          rst
-        </li>
-        <li
-          class="c2"
-        >
-          word_with_
-          <span
+            the
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            inmiddle
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-        </li>
-        <li
-          class="c2"
-        >
-          the
-          <span
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            StartWith
+            <span
+              class="c4"
+            >
+              Test
+            </span>
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-          inmiddle
-        </li>
-        <li
-          class="c2"
-        >
-          <span
+            endwith
+            <span
+              class="c4"
+            >
+              test
+            </span>
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-          StartWith
-          <span
+            more_
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            _here
+          </li>
+          <li
             class="c3"
           >
-            Test
-          </span>
-        </li>
-        <li
-          class="c2"
-        >
-          endwith
-          <span
+            A_
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            _bc_
+            <span
+              class="c4"
+            >
+              test
+            </span>
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-        </li>
-        <li
-          class="c2"
-        >
-          more_
-          <span
+            rand
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            str
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-          _here
-        </li>
-        <li
-          class="c2"
-        >
-          A_
-          <span
+            some
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            txt
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-          _bc_
-          <span
+            still
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            on6
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-        </li>
-        <li
-          class="c2"
-        >
-          rand
-          <span
-            class="c3"
-          >
-            test
-          </span>
-          str
-        </li>
-        <li
-          class="c2"
-        >
-          some
-          <span
-            class="c3"
-          >
-            test
-          </span>
-          txt
-        </li>
-        <li
-          class="c2"
-        >
-          still
-          <span
-            class="c3"
-          >
-            test
-          </span>
-          on6
-        </li>
-        <li
-          class="c2"
-        >
-          yet_another_
-          <span
-            class="c3"
-          >
-            test
-          </span>
-        </li>
-      </ul>
+            yet_another_
+            <span
+              class="c4"
+            >
+              test
+            </span>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>,
   "debug": [Function],
@@ -1203,7 +1440,6 @@ exports[`DropDown renders without error strings, no query 1`] = `
 .c1 {
   position: absolute;
   box-sizing: border-box;
-  list-style: 'none';
   width: 200px;
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
@@ -1212,7 +1448,6 @@ exports[`DropDown renders without error strings, no query 1`] = `
   overflow-y: auto;
   margin: 0;
   padding: 0;
-  list-style-type: none;
   background-color: white;
   border: 1px solid #aaa;
   border-radius: 3px;
@@ -1222,9 +1457,22 @@ exports[`DropDown renders without error strings, no query 1`] = `
   -moz-scrollbar-width: none;
   -ms-scrollbar-width: none;
   scrollbar-width: none;
+  overflow: hidden;
 }
 
 .c2 {
+  list-style: 'none';
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  -webkit-scrollbar-width: none;
+  -moz-scrollbar-width: none;
+  -ms-scrollbar-width: none;
+  scrollbar-width: none;
+}
+
+.c3 {
   padding: 4px 10px;
   font-size: 16px;
   font-weight: 400;
@@ -1232,7 +1480,7 @@ exports[`DropDown renders without error strings, no query 1`] = `
   cursor: pointer;
 }
 
-.c2:hover {
+.c3:hover {
   background-color: #d0d0d0;
   border: '1px solid #ccc';
 }
@@ -1242,115 +1490,119 @@ exports[`DropDown renders without error strings, no query 1`] = `
       <div
         class="c0"
       >
-        <ul
+        <div
           class="c1"
         >
-          <li
+          <ul
             class="c2"
           >
-            abc_test_def
-          </li>
-          <li
-            class="c2"
-          >
-            no_t_e_s_t
-          </li>
-          <li
-            class="c2"
-          >
-            TestRandom1
-          </li>
-          <li
-            class="c2"
-          >
-            another-test23
-          </li>
-          <li
-            class="c2"
-          >
-            thisIs_test4
-          </li>
-          <li
-            class="c2"
-          >
-            testxyzabc_Test
-          </li>
-          <li
-            class="c2"
-          >
-            Ghi_test1jktest2ltest3
-          </li>
-          <li
-            class="c2"
-          >
-            lmntestop
-          </li>
-          <li
-            class="c2"
-          >
-            uv_test_wxyz
-          </li>
-          <li
-            class="c2"
-          >
-            test123abc
-          </li>
-          <li
-            class="c2"
-          >
-            opqtestrst
-          </li>
-          <li
-            class="c2"
-          >
-            word_with_test
-          </li>
-          <li
-            class="c2"
-          >
-            thetestinmiddle
-          </li>
-          <li
-            class="c2"
-          >
-            testStartWithTest
-          </li>
-          <li
-            class="c2"
-          >
-            endwithtest
-          </li>
-          <li
-            class="c2"
-          >
-            more_test_here
-          </li>
-          <li
-            class="c2"
-          >
-            A_test_bc_test
-          </li>
-          <li
-            class="c2"
-          >
-            randteststr
-          </li>
-          <li
-            class="c2"
-          >
-            sometesttxt
-          </li>
-          <li
-            class="c2"
-          >
-            stillteston6
-          </li>
-          <li
-            class="c2"
-          >
-            yet_another_test
-          </li>
-        </ul>
+            <li
+              class="c3"
+            >
+              abc_test_def
+            </li>
+            <li
+              class="c3"
+            >
+              no_t_e_s_t
+            </li>
+            <li
+              class="c3"
+            >
+              TestRandom1
+            </li>
+            <li
+              class="c3"
+            >
+              another-test23
+            </li>
+            <li
+              class="c3"
+            >
+              thisIs_test4
+            </li>
+            <li
+              class="c3"
+            >
+              testxyzabc_Test
+            </li>
+            <li
+              class="c3"
+            >
+              Ghi_test1jktest2ltest3
+            </li>
+            <li
+              class="c3"
+            >
+              lmntestop
+            </li>
+            <li
+              class="c3"
+            >
+              uv_test_wxyz
+            </li>
+            <li
+              class="c3"
+            >
+              test123abc
+            </li>
+            <li
+              class="c3"
+            >
+              opqtestrst
+            </li>
+            <li
+              class="c3"
+            >
+              word_with_test
+            </li>
+            <li
+              class="c3"
+            >
+              thetestinmiddle
+            </li>
+            <li
+              class="c3"
+            >
+              testStartWithTest
+            </li>
+            <li
+              class="c3"
+            >
+              endwithtest
+            </li>
+            <li
+              class="c3"
+            >
+              more_test_here
+            </li>
+            <li
+              class="c3"
+            >
+              A_test_bc_test
+            </li>
+            <li
+              class="c3"
+            >
+              randteststr
+            </li>
+            <li
+              class="c3"
+            >
+              sometesttxt
+            </li>
+            <li
+              class="c3"
+            >
+              stillteston6
+            </li>
+            <li
+              class="c3"
+            >
+              yet_another_test
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </body>,
@@ -1365,7 +1617,6 @@ exports[`DropDown renders without error strings, no query 1`] = `
 .c1 {
   position: absolute;
   box-sizing: border-box;
-  list-style: 'none';
   width: 200px;
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
@@ -1374,7 +1625,6 @@ exports[`DropDown renders without error strings, no query 1`] = `
   overflow-y: auto;
   margin: 0;
   padding: 0;
-  list-style-type: none;
   background-color: white;
   border: 1px solid #aaa;
   border-radius: 3px;
@@ -1384,9 +1634,22 @@ exports[`DropDown renders without error strings, no query 1`] = `
   -moz-scrollbar-width: none;
   -ms-scrollbar-width: none;
   scrollbar-width: none;
+  overflow: hidden;
 }
 
 .c2 {
+  list-style: 'none';
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  -webkit-scrollbar-width: none;
+  -moz-scrollbar-width: none;
+  -ms-scrollbar-width: none;
+  scrollbar-width: none;
+}
+
+.c3 {
   padding: 4px 10px;
   font-size: 16px;
   font-weight: 400;
@@ -1394,7 +1657,7 @@ exports[`DropDown renders without error strings, no query 1`] = `
   cursor: pointer;
 }
 
-.c2:hover {
+.c3:hover {
   background-color: #d0d0d0;
   border: '1px solid #ccc';
 }
@@ -1403,115 +1666,119 @@ exports[`DropDown renders without error strings, no query 1`] = `
     <div
       class="c0"
     >
-      <ul
+      <div
         class="c1"
       >
-        <li
+        <ul
           class="c2"
         >
-          abc_test_def
-        </li>
-        <li
-          class="c2"
-        >
-          no_t_e_s_t
-        </li>
-        <li
-          class="c2"
-        >
-          TestRandom1
-        </li>
-        <li
-          class="c2"
-        >
-          another-test23
-        </li>
-        <li
-          class="c2"
-        >
-          thisIs_test4
-        </li>
-        <li
-          class="c2"
-        >
-          testxyzabc_Test
-        </li>
-        <li
-          class="c2"
-        >
-          Ghi_test1jktest2ltest3
-        </li>
-        <li
-          class="c2"
-        >
-          lmntestop
-        </li>
-        <li
-          class="c2"
-        >
-          uv_test_wxyz
-        </li>
-        <li
-          class="c2"
-        >
-          test123abc
-        </li>
-        <li
-          class="c2"
-        >
-          opqtestrst
-        </li>
-        <li
-          class="c2"
-        >
-          word_with_test
-        </li>
-        <li
-          class="c2"
-        >
-          thetestinmiddle
-        </li>
-        <li
-          class="c2"
-        >
-          testStartWithTest
-        </li>
-        <li
-          class="c2"
-        >
-          endwithtest
-        </li>
-        <li
-          class="c2"
-        >
-          more_test_here
-        </li>
-        <li
-          class="c2"
-        >
-          A_test_bc_test
-        </li>
-        <li
-          class="c2"
-        >
-          randteststr
-        </li>
-        <li
-          class="c2"
-        >
-          sometesttxt
-        </li>
-        <li
-          class="c2"
-        >
-          stillteston6
-        </li>
-        <li
-          class="c2"
-        >
-          yet_another_test
-        </li>
-      </ul>
+          <li
+            class="c3"
+          >
+            abc_test_def
+          </li>
+          <li
+            class="c3"
+          >
+            no_t_e_s_t
+          </li>
+          <li
+            class="c3"
+          >
+            TestRandom1
+          </li>
+          <li
+            class="c3"
+          >
+            another-test23
+          </li>
+          <li
+            class="c3"
+          >
+            thisIs_test4
+          </li>
+          <li
+            class="c3"
+          >
+            testxyzabc_Test
+          </li>
+          <li
+            class="c3"
+          >
+            Ghi_test1jktest2ltest3
+          </li>
+          <li
+            class="c3"
+          >
+            lmntestop
+          </li>
+          <li
+            class="c3"
+          >
+            uv_test_wxyz
+          </li>
+          <li
+            class="c3"
+          >
+            test123abc
+          </li>
+          <li
+            class="c3"
+          >
+            opqtestrst
+          </li>
+          <li
+            class="c3"
+          >
+            word_with_test
+          </li>
+          <li
+            class="c3"
+          >
+            thetestinmiddle
+          </li>
+          <li
+            class="c3"
+          >
+            testStartWithTest
+          </li>
+          <li
+            class="c3"
+          >
+            endwithtest
+          </li>
+          <li
+            class="c3"
+          >
+            more_test_here
+          </li>
+          <li
+            class="c3"
+          >
+            A_test_bc_test
+          </li>
+          <li
+            class="c3"
+          >
+            randteststr
+          </li>
+          <li
+            class="c3"
+          >
+            sometesttxt
+          </li>
+          <li
+            class="c3"
+          >
+            stillteston6
+          </li>
+          <li
+            class="c3"
+          >
+            yet_another_test
+          </li>
+        </ul>
+      </div>
     </div>
   </div>,
   "debug": [Function],
@@ -1582,7 +1849,6 @@ exports[`DropDown renders without error strings, query="test" 1`] = `
 .c1 {
   position: absolute;
   box-sizing: border-box;
-  list-style: 'none';
   width: 200px;
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
@@ -1591,7 +1857,6 @@ exports[`DropDown renders without error strings, query="test" 1`] = `
   overflow-y: auto;
   margin: 0;
   padding: 0;
-  list-style-type: none;
   background-color: white;
   border: 1px solid #aaa;
   border-radius: 3px;
@@ -1601,9 +1866,22 @@ exports[`DropDown renders without error strings, query="test" 1`] = `
   -moz-scrollbar-width: none;
   -ms-scrollbar-width: none;
   scrollbar-width: none;
+  overflow: hidden;
 }
 
 .c2 {
+  list-style: 'none';
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  -webkit-scrollbar-width: none;
+  -moz-scrollbar-width: none;
+  -ms-scrollbar-width: none;
+  scrollbar-width: none;
+}
+
+.c3 {
   padding: 4px 10px;
   font-size: 16px;
   font-weight: 400;
@@ -1611,12 +1889,12 @@ exports[`DropDown renders without error strings, query="test" 1`] = `
   cursor: pointer;
 }
 
-.c2:hover {
+.c3:hover {
   background-color: #d0d0d0;
   border: '1px solid #ccc';
 }
 
-.c3 {
+.c4 {
   background-color: yellow;
   font-weight: bold;
 }
@@ -1626,255 +1904,259 @@ exports[`DropDown renders without error strings, query="test" 1`] = `
       <div
         class="c0"
       >
-        <ul
+        <div
           class="c1"
         >
-          <li
+          <ul
             class="c2"
           >
-            abc_
-            <span
+            <li
               class="c3"
             >
-              test
-            </span>
-            _def
-          </li>
-          <li
-            class="c2"
-          >
-            no_t_e_s_t
-          </li>
-          <li
-            class="c2"
-          >
-            <span
+              abc_
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              _def
+            </li>
+            <li
               class="c3"
             >
-              Test
-            </span>
-            Random1
-          </li>
-          <li
-            class="c2"
-          >
-            another-
-            <span
+              no_t_e_s_t
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-            23
-          </li>
-          <li
-            class="c2"
-          >
-            thisIs_
-            <span
+              <span
+                class="c4"
+              >
+                Test
+              </span>
+              Random1
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-            4
-          </li>
-          <li
-            class="c2"
-          >
-            <span
+              another-
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              23
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-            xyzabc_
-            <span
+              thisIs_
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              4
+            </li>
+            <li
               class="c3"
             >
-              Test
-            </span>
-          </li>
-          <li
-            class="c2"
-          >
-            Ghi_
-            <span
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              xyzabc_
+              <span
+                class="c4"
+              >
+                Test
+              </span>
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-            1jk
-            <span
+              Ghi_
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              1jk
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              2l
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              3
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-            2l
-            <span
+              lmn
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              op
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-            3
-          </li>
-          <li
-            class="c2"
-          >
-            lmn
-            <span
+              uv_
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              _wxyz
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-            op
-          </li>
-          <li
-            class="c2"
-          >
-            uv_
-            <span
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              123abc
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-            _wxyz
-          </li>
-          <li
-            class="c2"
-          >
-            <span
+              opq
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              rst
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-            123abc
-          </li>
-          <li
-            class="c2"
-          >
-            opq
-            <span
+              word_with_
+              <span
+                class="c4"
+              >
+                test
+              </span>
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-            rst
-          </li>
-          <li
-            class="c2"
-          >
-            word_with_
-            <span
+              the
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              inmiddle
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-          </li>
-          <li
-            class="c2"
-          >
-            the
-            <span
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              StartWith
+              <span
+                class="c4"
+              >
+                Test
+              </span>
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-            inmiddle
-          </li>
-          <li
-            class="c2"
-          >
-            <span
+              endwith
+              <span
+                class="c4"
+              >
+                test
+              </span>
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-            StartWith
-            <span
+              more_
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              _here
+            </li>
+            <li
               class="c3"
             >
-              Test
-            </span>
-          </li>
-          <li
-            class="c2"
-          >
-            endwith
-            <span
+              A_
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              _bc_
+              <span
+                class="c4"
+              >
+                test
+              </span>
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-          </li>
-          <li
-            class="c2"
-          >
-            more_
-            <span
+              rand
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              str
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-            _here
-          </li>
-          <li
-            class="c2"
-          >
-            A_
-            <span
+              some
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              txt
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-            _bc_
-            <span
+              still
+              <span
+                class="c4"
+              >
+                test
+              </span>
+              on6
+            </li>
+            <li
               class="c3"
             >
-              test
-            </span>
-          </li>
-          <li
-            class="c2"
-          >
-            rand
-            <span
-              class="c3"
-            >
-              test
-            </span>
-            str
-          </li>
-          <li
-            class="c2"
-          >
-            some
-            <span
-              class="c3"
-            >
-              test
-            </span>
-            txt
-          </li>
-          <li
-            class="c2"
-          >
-            still
-            <span
-              class="c3"
-            >
-              test
-            </span>
-            on6
-          </li>
-          <li
-            class="c2"
-          >
-            yet_another_
-            <span
-              class="c3"
-            >
-              test
-            </span>
-          </li>
-        </ul>
+              yet_another_
+              <span
+                class="c4"
+              >
+                test
+              </span>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </body>,
@@ -1889,7 +2171,6 @@ exports[`DropDown renders without error strings, query="test" 1`] = `
 .c1 {
   position: absolute;
   box-sizing: border-box;
-  list-style: 'none';
   width: 200px;
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
@@ -1898,7 +2179,6 @@ exports[`DropDown renders without error strings, query="test" 1`] = `
   overflow-y: auto;
   margin: 0;
   padding: 0;
-  list-style-type: none;
   background-color: white;
   border: 1px solid #aaa;
   border-radius: 3px;
@@ -1908,9 +2188,22 @@ exports[`DropDown renders without error strings, query="test" 1`] = `
   -moz-scrollbar-width: none;
   -ms-scrollbar-width: none;
   scrollbar-width: none;
+  overflow: hidden;
 }
 
 .c2 {
+  list-style: 'none';
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  -webkit-scrollbar-width: none;
+  -moz-scrollbar-width: none;
+  -ms-scrollbar-width: none;
+  scrollbar-width: none;
+}
+
+.c3 {
   padding: 4px 10px;
   font-size: 16px;
   font-weight: 400;
@@ -1918,12 +2211,12 @@ exports[`DropDown renders without error strings, query="test" 1`] = `
   cursor: pointer;
 }
 
-.c2:hover {
+.c3:hover {
   background-color: #d0d0d0;
   border: '1px solid #ccc';
 }
 
-.c3 {
+.c4 {
   background-color: yellow;
   font-weight: bold;
 }
@@ -1932,255 +2225,259 @@ exports[`DropDown renders without error strings, query="test" 1`] = `
     <div
       class="c0"
     >
-      <ul
+      <div
         class="c1"
       >
-        <li
+        <ul
           class="c2"
         >
-          abc_
-          <span
+          <li
             class="c3"
           >
-            test
-          </span>
-          _def
-        </li>
-        <li
-          class="c2"
-        >
-          no_t_e_s_t
-        </li>
-        <li
-          class="c2"
-        >
-          <span
+            abc_
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            _def
+          </li>
+          <li
             class="c3"
           >
-            Test
-          </span>
-          Random1
-        </li>
-        <li
-          class="c2"
-        >
-          another-
-          <span
+            no_t_e_s_t
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-          23
-        </li>
-        <li
-          class="c2"
-        >
-          thisIs_
-          <span
+            <span
+              class="c4"
+            >
+              Test
+            </span>
+            Random1
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-          4
-        </li>
-        <li
-          class="c2"
-        >
-          <span
+            another-
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            23
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-          xyzabc_
-          <span
+            thisIs_
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            4
+          </li>
+          <li
             class="c3"
           >
-            Test
-          </span>
-        </li>
-        <li
-          class="c2"
-        >
-          Ghi_
-          <span
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            xyzabc_
+            <span
+              class="c4"
+            >
+              Test
+            </span>
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-          1jk
-          <span
+            Ghi_
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            1jk
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            2l
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            3
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-          2l
-          <span
+            lmn
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            op
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-          3
-        </li>
-        <li
-          class="c2"
-        >
-          lmn
-          <span
+            uv_
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            _wxyz
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-          op
-        </li>
-        <li
-          class="c2"
-        >
-          uv_
-          <span
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            123abc
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-          _wxyz
-        </li>
-        <li
-          class="c2"
-        >
-          <span
+            opq
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            rst
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-          123abc
-        </li>
-        <li
-          class="c2"
-        >
-          opq
-          <span
+            word_with_
+            <span
+              class="c4"
+            >
+              test
+            </span>
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-          rst
-        </li>
-        <li
-          class="c2"
-        >
-          word_with_
-          <span
+            the
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            inmiddle
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-        </li>
-        <li
-          class="c2"
-        >
-          the
-          <span
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            StartWith
+            <span
+              class="c4"
+            >
+              Test
+            </span>
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-          inmiddle
-        </li>
-        <li
-          class="c2"
-        >
-          <span
+            endwith
+            <span
+              class="c4"
+            >
+              test
+            </span>
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-          StartWith
-          <span
+            more_
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            _here
+          </li>
+          <li
             class="c3"
           >
-            Test
-          </span>
-        </li>
-        <li
-          class="c2"
-        >
-          endwith
-          <span
+            A_
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            _bc_
+            <span
+              class="c4"
+            >
+              test
+            </span>
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-        </li>
-        <li
-          class="c2"
-        >
-          more_
-          <span
+            rand
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            str
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-          _here
-        </li>
-        <li
-          class="c2"
-        >
-          A_
-          <span
+            some
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            txt
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-          _bc_
-          <span
+            still
+            <span
+              class="c4"
+            >
+              test
+            </span>
+            on6
+          </li>
+          <li
             class="c3"
           >
-            test
-          </span>
-        </li>
-        <li
-          class="c2"
-        >
-          rand
-          <span
-            class="c3"
-          >
-            test
-          </span>
-          str
-        </li>
-        <li
-          class="c2"
-        >
-          some
-          <span
-            class="c3"
-          >
-            test
-          </span>
-          txt
-        </li>
-        <li
-          class="c2"
-        >
-          still
-          <span
-            class="c3"
-          >
-            test
-          </span>
-          on6
-        </li>
-        <li
-          class="c2"
-        >
-          yet_another_
-          <span
-            class="c3"
-          >
-            test
-          </span>
-        </li>
-      </ul>
+            yet_another_
+            <span
+              class="c4"
+            >
+              test
+            </span>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>,
   "debug": [Function],

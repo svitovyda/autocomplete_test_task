@@ -30,6 +30,9 @@ export interface AutocompleteProps<T> {
   caseSensitive?: boolean;
   showDataOnEmptyInput?: boolean;
   initialInput?: string;
+  loading?: boolean;
+  LoadingAnimation?: React.ComponentType<React.HTMLAttributes<HTMLElement>>;
+  keepDropDownOnSelect?: boolean;
 }
 /*
  * This component renders input with autocompletion
@@ -55,6 +58,9 @@ export const Autocomplete = React.memo(
     caseSensitive = false,
     showDataOnEmptyInput = true,
     initialInput,
+    loading,
+    LoadingAnimation,
+    keepDropDownOnSelect,
   }: AutocompleteProps<T>) => {
     /**
      * If Autocomplete is used to display result of the search that were recalculated outside,
@@ -137,10 +143,10 @@ export const Autocomplete = React.memo(
     const onSelectItem = React.useCallback(
       (item: DictionaryItem<T>) => {
         onItemSelected?.(item.itemData);
-        setShowDropDown(false);
+        keepDropDownOnSelect && setShowDropDown(false);
         setInput(item.itemToShow.label);
       },
-      [onItemSelected, setInput]
+      [onItemSelected, setInput, keepDropDownOnSelect]
     );
 
     return (
@@ -161,6 +167,8 @@ export const Autocomplete = React.memo(
             items={itemsToShow}
             query={inputQueryState.query}
             caseSensitive={caseSensitive}
+            loading={loading}
+            LoadingAnimation={LoadingAnimation}
           />
         )}
       </>

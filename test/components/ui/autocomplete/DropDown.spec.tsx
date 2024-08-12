@@ -47,4 +47,10 @@ describe('DropDown', () => {
 
     expect(component).toMatchSnapshot();
   });
+
+  it('renders with loading animation', () => {
+    const component = render(<DropDown items={mockObject} onSelectItem={jest.fn()} loading />);
+
+    expect(component).toMatchSnapshot();
+  });
 });

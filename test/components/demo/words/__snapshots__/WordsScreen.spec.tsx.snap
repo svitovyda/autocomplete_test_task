@@ -16,62 +16,6 @@ exports[`WordsScreen renders when ApiService returns error 1`] = `
   display: block;
 }
 
-.c3 {
-  height: 50px;
-  width: 50px;
-  margin: 5px auto;
-}
-
-.c4 {
-  position: relative;
-  top: 0;
-  left: 0;
-  height: 50px;
-  width: 50px;
-  border-radius: 100%;
-  border: 3px solid transparent;
-  border-color: transparent lightgrey transparent lightgrey;
-  -webkit-animation: LtRVX 2s linear 0s infinite normal;
-  animation: LtRVX 2s linear 0s infinite normal;
-  -webkit-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-}
-
-.c5 {
-  position: relative;
-  top: -52px;
-  left: 5px;
-  width: 43px;
-  height: 43px;
-  border-radius: 100%;
-  border: 2px solid transparent;
-  border-color: transparent lightgrey transparent lightgrey;
-  -webkit-animation: cLNnjC 1s linear 0s infinite normal;
-  animation: cLNnjC 1s linear 0s infinite normal;
-  -webkit-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-}
-
-.c6 {
-  position: relative;
-  top: -80px;
-  left: -22px;
-  width: 100px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-animation: kRlIGi 3s linear 0s infinite normal;
-  animation: kRlIGi 3s linear 0s infinite normal;
-  color: lightgrey;
-  font: bold 8px 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  opacity: 0;
-  text-align: center;
-  text-transform: uppercase;
-}
-
 .c2 {
   display: inline-block;
   padding: 4px 2px;
@@ -126,21 +70,6 @@ exports[`WordsScreen renders when ApiService returns error 1`] = `
             value=""
           />
         </div>
-        <div
-          class="c3"
-        >
-          <div
-            class="c4"
-          />
-          <div
-            class="c5"
-          />
-          <div
-            class="c6"
-          >
-            loading
-          </div>
-        </div>
       </div>
     </div>
   </body>,
@@ -155,62 +84,6 @@ exports[`WordsScreen renders when ApiService returns error 1`] = `
   margin: 0 auto;
   padding: 0 10px;
   display: block;
-}
-
-.c3 {
-  height: 50px;
-  width: 50px;
-  margin: 5px auto;
-}
-
-.c4 {
-  position: relative;
-  top: 0;
-  left: 0;
-  height: 50px;
-  width: 50px;
-  border-radius: 100%;
-  border: 3px solid transparent;
-  border-color: transparent lightgrey transparent lightgrey;
-  -webkit-animation: LtRVX 2s linear 0s infinite normal;
-  animation: LtRVX 2s linear 0s infinite normal;
-  -webkit-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-}
-
-.c5 {
-  position: relative;
-  top: -52px;
-  left: 5px;
-  width: 43px;
-  height: 43px;
-  border-radius: 100%;
-  border: 2px solid transparent;
-  border-color: transparent lightgrey transparent lightgrey;
-  -webkit-animation: cLNnjC 1s linear 0s infinite normal;
-  animation: cLNnjC 1s linear 0s infinite normal;
-  -webkit-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-}
-
-.c6 {
-  position: relative;
-  top: -80px;
-  left: -22px;
-  width: 100px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-animation: kRlIGi 3s linear 0s infinite normal;
-  animation: kRlIGi 3s linear 0s infinite normal;
-  color: lightgrey;
-  font: bold 8px 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  opacity: 0;
-  text-align: center;
-  text-transform: uppercase;
 }
 
 .c2 {
@@ -265,21 +138,6 @@ exports[`WordsScreen renders when ApiService returns error 1`] = `
           type="text"
           value=""
         />
-      </div>
-      <div
-        class="c3"
-      >
-        <div
-          class="c4"
-        />
-        <div
-          class="c5"
-        />
-        <div
-          class="c6"
-        >
-          loading
-        </div>
       </div>
     </div>
   </div>,
@@ -353,62 +211,6 @@ exports[`WordsScreen renders without error 1`] = `
   display: block;
 }
 
-.c3 {
-  height: 50px;
-  width: 50px;
-  margin: 5px auto;
-}
-
-.c4 {
-  position: relative;
-  top: 0;
-  left: 0;
-  height: 50px;
-  width: 50px;
-  border-radius: 100%;
-  border: 3px solid transparent;
-  border-color: transparent lightgrey transparent lightgrey;
-  -webkit-animation: LtRVX 2s linear 0s infinite normal;
-  animation: LtRVX 2s linear 0s infinite normal;
-  -webkit-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-}
-
-.c5 {
-  position: relative;
-  top: -52px;
-  left: 5px;
-  width: 43px;
-  height: 43px;
-  border-radius: 100%;
-  border: 2px solid transparent;
-  border-color: transparent lightgrey transparent lightgrey;
-  -webkit-animation: cLNnjC 1s linear 0s infinite normal;
-  animation: cLNnjC 1s linear 0s infinite normal;
-  -webkit-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-}
-
-.c6 {
-  position: relative;
-  top: -80px;
-  left: -22px;
-  width: 100px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-animation: kRlIGi 3s linear 0s infinite normal;
-  animation: kRlIGi 3s linear 0s infinite normal;
-  color: lightgrey;
-  font: bold 8px 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  opacity: 0;
-  text-align: center;
-  text-transform: uppercase;
-}
-
 .c2 {
   display: inline-block;
   padding: 4px 2px;
@@ -463,21 +265,6 @@ exports[`WordsScreen renders without error 1`] = `
             value=""
           />
         </div>
-        <div
-          class="c3"
-        >
-          <div
-            class="c4"
-          />
-          <div
-            class="c5"
-          />
-          <div
-            class="c6"
-          >
-            loading
-          </div>
-        </div>
       </div>
     </div>
   </body>,
@@ -492,62 +279,6 @@ exports[`WordsScreen renders without error 1`] = `
   margin: 0 auto;
   padding: 0 10px;
   display: block;
-}
-
-.c3 {
-  height: 50px;
-  width: 50px;
-  margin: 5px auto;
-}
-
-.c4 {
-  position: relative;
-  top: 0;
-  left: 0;
-  height: 50px;
-  width: 50px;
-  border-radius: 100%;
-  border: 3px solid transparent;
-  border-color: transparent lightgrey transparent lightgrey;
-  -webkit-animation: LtRVX 2s linear 0s infinite normal;
-  animation: LtRVX 2s linear 0s infinite normal;
-  -webkit-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-}
-
-.c5 {
-  position: relative;
-  top: -52px;
-  left: 5px;
-  width: 43px;
-  height: 43px;
-  border-radius: 100%;
-  border: 2px solid transparent;
-  border-color: transparent lightgrey transparent lightgrey;
-  -webkit-animation: cLNnjC 1s linear 0s infinite normal;
-  animation: cLNnjC 1s linear 0s infinite normal;
-  -webkit-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-}
-
-.c6 {
-  position: relative;
-  top: -80px;
-  left: -22px;
-  width: 100px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-animation: kRlIGi 3s linear 0s infinite normal;
-  animation: kRlIGi 3s linear 0s infinite normal;
-  color: lightgrey;
-  font: bold 8px 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  opacity: 0;
-  text-align: center;
-  text-transform: uppercase;
 }
 
 .c2 {
@@ -602,21 +333,6 @@ exports[`WordsScreen renders without error 1`] = `
           type="text"
           value=""
         />
-      </div>
-      <div
-        class="c3"
-      >
-        <div
-          class="c4"
-        />
-        <div
-          class="c5"
-        />
-        <div
-          class="c6"
-        >
-          loading
-        </div>
       </div>
     </div>
   </div>,

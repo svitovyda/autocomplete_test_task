@@ -23,9 +23,11 @@ interface FetchAction<T> {
 const dataFetchReducer = <T>(state: FetchState<T>, action: FetchAction<T>): FetchState<T> => {
   switch (action.type) {
     case 'START_FETCH_INITIAL':
-      return { ...state, isLoading: true, isError: false, data: [], query: action.payload?.query };
+      // usually data should be set to [], but for needs of this project it keeps previous value
+      return { ...state, isLoading: true, isError: false, query: action.payload?.query };
     case 'START_FETCH_SEARCH':
-      return { ...state, isLoading: true, isError: false, data: [], query: action.payload?.query };
+      // usually data should be set to [], but for needs of this project it keeps previous value
+      return { ...state, isLoading: true, isError: false, query: action.payload?.query };
     case 'FETCH_SUCCESS':
       if (state.query === action.payload?.query) {
         return { ...state, isLoading: false, isError: false, data: action.payload?.result || [] };

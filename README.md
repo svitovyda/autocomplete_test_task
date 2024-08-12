@@ -7,7 +7,7 @@
 
 ## Uses
 
-- `react v18` with `styled-components` styling and `lodash` for deep comparison
+- `react v18` with `styled-components` styling and `lodash` for deep comparison of props
 - `webpack` module bundler with `babel` for `Typescript` compilation
 - `yarn` package manager
 - `jest` unit testing with `jest-styled-components` to get fully detailed `CSS` in snapshots
@@ -28,19 +28,28 @@ Also:
 
 - `yarn compile` to check the `TypeScript` compilation
 - `yarn check` to run Lint and Prettier in a check mode
-- `yarn fix` to run Lint and Prettier in fix mode on entire project
+- `yarn fix` to run Lint and Prettier in fix mode on the entire project
 
 ## How the `Autocomplete` works:
 
-With props `{data, onQueryChanged, onItemSelected, maxOptionsToShow, minAcceptableLength, debounceInterval, placeholder, initialInput}` developers can use `Autocomplete` for common "dynamic" cases of showing strings where the search result comes from some other code - request to backend, some other function etc., where `data` - search result, `onQueryChanged`, `onItemSelected` - callbacks that will be triggered when debouncing of query will happen and when user selects an item. `initialInput` should be a text or empty string, to initialize or reset (basically, to control) the text input with a given value. `placeholder` is a default text to show in input before user starts typing.
+With props `{data, onQueryChanged, onItemSelected, maxOptionsToShow, minAcceptableLength, debounceInterval, placeholder, initialInput, loading, LoadingAnimation, keepDropDownOnSelect}` developers can use `Autocomplete` for common "dynamic" cases of showing strings where the search result comes from some other code - request to backend, some other function etc.
+- `data` - search result;
+- `onQueryChanged` - callback that is triggered when debouncing of query will happen;
+- `onItemSelected` - callback that is triggered when the user selects an item;
+- `initialInput` - if it's a text or empty string, it initializes or resets (basically, controls) the text input with a given value;
+- `placeholder` - a default text to show in the input before the user starts typing;
+- `loading` - weather drop-down should show loading animation;
+- `LoadingAnimation` - which animation to show;
+- `keepDropDownOnSelect` - configures if drop-down should be opened when the item was selected by the user;
+
+There can be other configurational properties, depending on the project needs.
 
 This case is shown in a demo **`WordsScreen`**.
 
- - _Note:_ the `loading` status of data loading hook could be ignored, as loading gets called for the `Autocomplete`, not for the content of the screen.
+ - _Note:_ I used the **WireMock** API, where the search is faked by always returning the string surrounded with random chars of random length as prefix and suffix added to `query`, so the data will never be the same for the same `query` and will always return some search results.
+ - _Note:_ as `contentFetcher` is implemented to specifically serve search words by query and it shouldn't be universal in this project, I didn't implement the erasing of previous `data` in its state, to be able to show previous search results in case of errors. It can be converted into a more universal one, either by making erasing of previously loaded `data` configurable or by preserving non-empty data in a separate state outside of this universal hook.
 
- - _Note:_ I used the **WireMock** API, where the search is faked by always returning the string surrounded with random chars of random length as prefix and sufix, so the data will never be the same for the same `query` and will always return some search results.
-
- #### The script generating mocks on **WireMock**:
+ #### The script generating mocks on **WireMock** (for **`WordsScreen`** demo example):
  **`/search`**
  ```
  [
@@ -66,29 +75,29 @@ This case is shown in a demo **`WordsScreen`**.
 ]
 ```
 
+To use the `Autocomplete` with lists of complex custom type data `T` (`Object`s, but it can be anything) - only `dataLabel` and `dataId` should be used, they should implement `T => string` and `T => string|number`. I made  `Autocomplete` so that developers would not know anything about the internal types it uses and should not convert anything. This is the case for the list of cities.
 
-To use the `Autocomplete` with lists of complex custom data `T` (`Object`s, but it can be anything) - only `dataLabel` and `dataId` should be used, they should implement `T => string` and `T => string|number`. I made the `Autocomplete` in the way that developers should not know anything about internal types it uses and should not convert anything.
+- _Note:_ these two functions, as well as callbacks and `LoadingAnimation`, should be a `React.useCallback` or defined outside of any React component so that they don't trigger re-render of `Autocomplete` component, but since often developers use inline functions, I implemented a deep comparison of `data` in each hook and subcomponent that uses it.
 
-- _Note:_ this two functions, aswell as callbacks, should be a `useCallback` or defined outside of any react component, so that they don't trigger re-render of `Autocomplete` component, but since often developers use inline functions, I implemented deep comparision of `data` in each hook and subcomponent that uses it.
+If `Autocomplete` is used for hardcoded data ("static" mode), and the data needs to be straight-forward filtered, props `{ autoCalculate, caseSensitive, showDataOnEmptyInput }` should be used.
+- `autoCalculate` should be set to `true` for this case;
+- `caseSensitive` defines if text search of `query` in `data` will be case sensitive;
+- `showDataOnEmptyInput` - defines, if the `data` without search filtering applied should be shown to the user as options in the drop-down (it is ignored if `autoCalculate` is `false`);
 
-If `Autocomplete` is used for a hardcoded data ("static" mode), and the data needs to be straight-forward filtered, props `{ autoCalculate, caseSensitive, showDataOnEmptyInput }` should be used. `autoCalculate` should be set to `true`, `caseSensitive` defines if text search of `query` in data will be case sensitive, `showDataOnEmptyInput` (ignored if `autoCalculate` is `false`) defines, if the `data` without search filtering applied should be shown to user as options in the drop-down.
+The two examples of this case are shown in **`CitiesScreen`**: one completely static (continents) and one (cities) with `data` changed depending on the continent selected (in this case `initialInput` should be used to clean the input, as data change should not clean it automatically for "dynamic" cases, and maybe for some "static" too).
 
-The two examples of this case are shown in **`CitiesScreen`**: one completely static (continents) and one (cities) with `data` changed depending on continent selected (in this case `initialInput` should be used to clean the input, as data change should not clean it automatically for "dynamic" cases, and maybe for some "static" too).
+## Limitations and shortcuts:
 
-- _Note:_ I used the Map functionality from my other project just to have a fun moment of demo, it shouldn't be evaluated too much, as the `Autocomplete` is the main point of this test here.
-
-## Limitations:
-
-- The **uniqueness** of items in the `data` list is not checked inside of the Autocomplete, it should be checked by developer.
-- **Styles** in this implementation are hardcoded (this is the shortcut I made). This can be done by either passing styles as `styled-components` `css` objects in props for `<input>`, `<ul>`, `<li>` as 3 props and merged with core styles that are needed for elements. Or render functions pattern can be used.
-- **Data loading status** indicator is not implemented in : `loading` and `loadingAnimation` can be added as props to give a possibility to show loading status if `data` gets loaded.
-- **Custom search filtering** function for the "static" case `data` on type T can be implemented as prop.
+- The **uniqueness** of items in the `data` list is not checked inside of the Autocomplete, it should be checked by the developer.
+- **Styles** in this implementation are hardcoded (this is the shortcut I made). This can be done by passing styles as `styled-components` `css` objects in props for `<input>`, `<ul>`, `<li>` as 3-4 props (for `<input>`, `div`, `<ul>`, `<li>`) and merging them with core styles that are needed for elements. Or render functions pattern can be used. Or other ways - it highly depends on styling libraries and engines and the general styling approach of the project.
+- **`LoadingAnimation`** can be extended to take not only a ComponentType but also any `JSX` element, depending on project needs.
+- **Custom search filtering** function for the "static" case `data` on type T can be implemented as a prop.
 - **Special characters** are not filtered out from input text.
 - **Big size** of `data` performance should be tested additionally.
 - **Visual Testing:** Storybook can be added to test the component visually with different props combination;
-- **Unit testing:** Test IDs should be added to each interactive element, and user interaction should be unit tested using mocking of components and server responses. As the tests are implemented now, with simple snapshots (with proper `CSS` capturing) and moving the business logic from the `React` component to custom hooks, it was possible to achieve ~80% + test coverage quickly and already catch many potential bugs.
+- **Unit testing:** Test IDs should be added to each interactive element, and the user interaction should be unit tested using mocking of components and server responses. As the tests are implemented now, with simple snapshots (with proper `CSS` capturing) and moving the business logic from the `React` component to custom hooks, it was possible to achieve ~80% + test coverage quickly and already catch many potential bugs.
 - **Backend data fetching:** I used plain `fetch`. Some more advanced third-party libraries can be used.
-- **`SonarCloud`** can be used for the repo, with correct setup it can be really usefull.
+- **`SonarCloud`** can be used for the repo, with the correct (non-blocking) setup it can be useful.
 - `React` **`<StrictMode>`** can be used for development mode to identify potential bugs and performance issues.
-- I didn't implement any of the **accessibility requirements** in this version.
-- **Focus change** inside of the `Autocomplete` by arrows and focus lost can be implemented additionally.
+- I didn't implement any of the **accessibility requirements** (WCAG) in this version.
+- **Focus change** inside of the `Autocomplete` by up/down keyboard arrows pressing and focus lost can be implemented additionally.

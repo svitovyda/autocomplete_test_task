@@ -1,12 +1,12 @@
 import { type FetchState, useContentFetcher } from '../../../hooks/contentFetcher';
 import { InputContainer } from '../../../styles/Input';
-import { ErrorContainer, MainContainer } from '../../../styles/Main';
+import { MainContainer } from '../../../styles/Main';
 import { LoaderAnimation } from '../../ui/LoaderAnimation';
 import { Autocomplete } from '../../ui/autocomplete/Autocomplete';
 import configJson from 'config';
 import * as React from 'react';
 
-export const WordsScreen: React.FC = () => {
+export const WordsScreen: React.FC = React.memo(() => {
   const [fetchState, setQuery] = useContentFetcher<FetchState<string>>('');
   const [selectedWord, setSelectedWord] = React.useState<string>('');
 
@@ -31,13 +31,14 @@ export const WordsScreen: React.FC = () => {
           onQueryChanged={onNewQuery}
           onItemSelected={(item) => (item ? setSelectedWord(item.toString()) : '')}
           maxOptionsToShow={6}
+          loading={fetchState.isLoading}
+          LoadingAnimation={LoaderAnimation}
+          keepDropDownOnSelect
         />
       </InputContainer>
-      {fetchState.isLoading && <LoaderAnimation />}
-      {fetchState.isError && (
-        <ErrorContainer>Sorry, there was an error while fetching search results</ErrorContainer>
-      )}
       {selectedWord && <MainContainer>You found a word: {selectedWord}</MainContainer>}
     </MainContainer>
   );
-};
+});
+
+WordsScreen.displayName = 'WordsScreen';

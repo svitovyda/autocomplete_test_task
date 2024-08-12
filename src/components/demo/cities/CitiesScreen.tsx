@@ -28,7 +28,7 @@ const defaultCity: CityMapModel | undefined =
 const dataId = (item: CityMapModel): CityID => item.id;
 const dataLabel = (item: CityMapModel): string => item.name;
 
-export const CitiesScreen: React.FC = () => {
+export const CitiesScreen: React.FC = React.memo(() => {
   const [continent, setContinent] = React.useState<ContinentType | undefined>(
     config.defaultContinent
   );
@@ -84,4 +84,6 @@ export const CitiesScreen: React.FC = () => {
       <MapView marker={city} continent={continent} />
     </MainContainer>
   );
-};
+});
+
+CitiesScreen.displayName = 'CitiesScreen';
