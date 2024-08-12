@@ -108,7 +108,7 @@ exports[`CitiesScreen renders without error 1`] = `
                 class="c5"
                 placeholder="Start typing to find continent..."
                 type="text"
-                value="Europe"
+                value=""
               />
             </div>
           </div>
@@ -245,7 +245,7 @@ exports[`CitiesScreen renders without error 1`] = `
               class="c5"
               placeholder="Start typing to find continent..."
               type="text"
-              value="Europe"
+              value=""
             />
           </div>
         </div>

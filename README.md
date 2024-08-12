@@ -32,7 +32,7 @@ Also:
 
 ## How the `Autocomplete` works:
 
-With props `{data, onQueryChanged, onItemSelected, maxOptionsToShow, minAcceptableLength, debounceInterval, placeholder, initialInput, loading, LoadingAnimation, keepDropDownOnSelect}` developers can use `Autocomplete` for common "dynamic" cases of showing strings where the search result comes from some other code - request to backend, some other function etc.
+With props `{data, onQueryChanged, onItemSelected, maxOptionsToShow, minAcceptableLength, debounceInterval, placeholder, initialInput, loading, LoadingAnimation, keepDropDownOnSelect, setInputToSelected}` developers can use `Autocomplete` for common "dynamic" cases of showing strings where the search result comes from some other code - request to backend, some other function etc.
 - `data` - search result;
 - `onQueryChanged` - callback that is triggered when debouncing of `query` will happen;
 - `onItemSelected` - callback that is triggered when the user selects an item;
@@ -41,6 +41,7 @@ With props `{data, onQueryChanged, onItemSelected, maxOptionsToShow, minAcceptab
 - `loading` - weather drop-down should show loading animation;
 - `LoadingAnimation` - which animation to show;
 - `keepDropDownOnSelect` - configures if drop-down should be opened when the item was selected by the user;
+- `setInputToSelected` - configures if input should be updated with the selected item label (useless for continents and cities selectors, as almost always requires erasing of current value to get the full list of continents or cities, and selected values are shown on map and a map caption);
 
 There can be other configurational properties, depending on the project needs.
 

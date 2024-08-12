@@ -33,6 +33,7 @@ export interface AutocompleteProps<T> {
   loading?: boolean;
   LoadingAnimation?: React.ComponentType<React.HTMLAttributes<HTMLElement>>;
   keepDropDownOnSelect?: boolean;
+  setInputToSelected?: boolean;
 }
 /*
  * This component renders input with autocompletion
@@ -61,6 +62,7 @@ export const Autocomplete = React.memo(
     loading,
     LoadingAnimation,
     keepDropDownOnSelect,
+    setInputToSelected = true,
   }: AutocompleteProps<T>) => {
     /**
      * If Autocomplete is used to display result of the search that were recalculated outside,
@@ -111,8 +113,8 @@ export const Autocomplete = React.memo(
       }
     }, [inputQueryState.query, onQueryChanged]);
 
-    // all the calculations of dataToShow should be made by this moment,
-    // only show drop-down and select all tezt in input
+    // all the calculations of dataToShow should be already made by this moment,
+    // only show drop-down and select all text in input should happen here
     const onFocusIn = React.useCallback(() => {
       if (showDataOnEmptyInput || inputQueryState.input) {
         setShowDropDown(true);
@@ -143,10 +145,16 @@ export const Autocomplete = React.memo(
     const onSelectItem = React.useCallback(
       (item: DictionaryItem<T>) => {
         onItemSelected?.(item.itemData);
-        keepDropDownOnSelect && setShowDropDown(false);
-        setInput(item.itemToShow.label);
+        if (!keepDropDownOnSelect) {
+          setShowDropDown(false);
+        }
+        if (setInputToSelected) {
+          setInput(item.itemToShow.label);
+        } else {
+          setInput('');
+        }
       },
-      [onItemSelected, setInput, keepDropDownOnSelect]
+      [onItemSelected, setInput, keepDropDownOnSelect, setInputToSelected]
     );
 
     return (

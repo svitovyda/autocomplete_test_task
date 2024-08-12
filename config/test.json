@@ -257,5 +257,6 @@
     { "id": "25", "name": "Tarawa", "lat": 1.329, "lng": 172.979 },
     { "id": "26", "name": "Port Vila", "lat": -17.7333, "lng": 168.3273 }
   ],
-  "defaultContinent": "Europe"
+  "defaultContinent": "Europe",
+  "defaultCityId": "4"
 }

@@ -59,7 +59,7 @@ export const CitiesScreen: React.FC = React.memo(() => {
               autoCalculate
               onItemSelected={onContinentSelected}
               maxOptionsToShow={6}
-              initialInput={continent}
+              setInputToSelected={false}
             />
           </InputContainer>
         </AutoselectContainer>
@@ -76,7 +76,7 @@ export const CitiesScreen: React.FC = React.memo(() => {
               dataLabel={dataLabel}
               onItemSelected={setCity}
               maxOptionsToShow={9}
-              initialInput={city?.name || ''}
+              setInputToSelected={false}
             />
           </InputContainer>
         </AutoselectContainer>
