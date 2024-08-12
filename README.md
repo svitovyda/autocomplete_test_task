@@ -34,7 +34,7 @@ Also:
 
 With props `{data, onQueryChanged, onItemSelected, maxOptionsToShow, minAcceptableLength, debounceInterval, placeholder, initialInput, loading, LoadingAnimation, keepDropDownOnSelect}` developers can use `Autocomplete` for common "dynamic" cases of showing strings where the search result comes from some other code - request to backend, some other function etc.
 - `data` - search result;
-- `onQueryChanged` - callback that is triggered when debouncing of query will happen;
+- `onQueryChanged` - callback that is triggered when debouncing of `query` will happen;
 - `onItemSelected` - callback that is triggered when the user selects an item;
 - `initialInput` - if it's a text or empty string, it initializes or resets (basically, controls) the text input with a given value;
 - `placeholder` - a default text to show in the input before the user starts typing;
@@ -46,8 +46,9 @@ There can be other configurational properties, depending on the project needs.
 
 This case is shown in a demo **`WordsScreen`**.
 
- - _Note:_ I used the **WireMock** API, where the search is faked by always returning the string surrounded with random chars of random length as prefix and suffix added to `query`, so the data will never be the same for the same `query` and will always return some search results.
- - _Note:_ as `contentFetcher` is implemented to specifically serve search words by query and it shouldn't be universal in this project, I didn't implement the erasing of previous `data` in its state, to be able to show previous search results in case of errors. It can be converted into a more universal one, either by making erasing of previously loaded `data` configurable or by preserving non-empty data in a separate state outside of this universal hook.
+ - _Note:_ I used the **WireMock** API, where the search is faked by always returning the string surrounded with random chars of random length as prefix and suffix added to `query`, so the `data` will never be the same for the same `query` and will always return some search results.
+ - _Note:_ in `contentFetcher` each request/response is stored with `query`. This way when there are lots of queries triggered only the one for the latest `query` will be dispatched.
+ - _Note:_ as `contentFetcher` is implemented to specifically serve search words by `query` and it shouldn't be universal in this project, I didn't implement the erasing of previous `data` in its state, to be able to show previous search results in case of errors. It can be converted into a more universal one, either by making erasing of previously loaded `data` configurable or by preserving non-empty `data` in a separate state outside of this universal hook.
 
  #### The script generating mocks on **WireMock** (for **`WordsScreen`** demo example):
  **`/search`**
@@ -75,7 +76,7 @@ This case is shown in a demo **`WordsScreen`**.
 ]
 ```
 
-To use the `Autocomplete` with lists of complex custom type data `T` (`Object`s, but it can be anything) - only `dataLabel` and `dataId` should be used, they should implement `T => string` and `T => string|number`. I made  `Autocomplete` so that developers would not know anything about the internal types it uses and should not convert anything. This is the case for the list of cities.
+To use the `Autocomplete` with `data` as list of complex custom type `T` (mostly `Object`s, but it can be anything) - only `dataLabel` and `dataId` should be used, they should implement `T => string` and `T => string|number`. I made  `Autocomplete` so that developers would not know anything about the internal types it uses and should not convert anything. This is the case for the list of cities in demo.
 
 - _Note:_ these two functions, as well as callbacks and `LoadingAnimation`, should be a `React.useCallback` or defined outside of any React component so that they don't trigger re-render of `Autocomplete` component, but since often developers use inline functions, I implemented a deep comparison of `data` in each hook and subcomponent that uses it.
 
@@ -90,6 +91,7 @@ The two examples of this case are shown in **`CitiesScreen`**: one completely st
 
 - The **uniqueness** of items in the `data` list is not checked inside of the Autocomplete, it should be checked by the developer.
 - **Styles** in this implementation are hardcoded (this is the shortcut I made). This can be done by passing styles as `styled-components` `css` objects in props for `<input>`, `<ul>`, `<li>` as 3-4 props (for `<input>`, `div`, `<ul>`, `<li>`) and merging them with core styles that are needed for elements. Or render functions pattern can be used. Or other ways - it highly depends on styling libraries and engines and the general styling approach of the project.
+- **Design** is not responsive and not adjusted for mobile devices;
 - **`LoadingAnimation`** can be extended to take not only a ComponentType but also any `JSX` element, depending on project needs.
 - **Custom search filtering** function for the "static" case `data` on type T can be implemented as a prop.
 - **Special characters** are not filtered out from input text.
