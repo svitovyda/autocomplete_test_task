@@ -4,6 +4,8 @@ import {
   type CityMapModel,
   type ContinentType,
   continentCities,
+  continentOptions,
+  continentPoligons,
 } from '../../../models/Continents';
 import { AutoselectContainer, AutoselectsContainer, Label } from '../../../styles/Cities';
 import { InputContainer } from '../../../styles/Input';
@@ -81,7 +83,12 @@ export const CitiesScreen: React.FC = React.memo(() => {
           </InputContainer>
         </AutoselectContainer>
       </AutoselectsContainer>
-      <MapView marker={city} continent={continent} />
+      <MapView
+        marker={city}
+        continent={continent}
+        polygon={continent && !city ? continentPoligons[continent] : undefined}
+        polygonOptions={continent && !city ? continentOptions[continent] : undefined}
+      />
     </MainContainer>
   );
 });

@@ -15,6 +15,18 @@ export interface AppConfig {
   citiesAustralia: CityMapModel[];
   citiesAfrica: CityMapModel[];
   citiesAsia: CityMapModel[];
+  polygonEurope: [number, number][];
+  polygonNorthAmerica: [number, number][];
+  polygonSouthAmerica: [number, number][];
+  polygonAustralia: [number, number][];
+  polygonAfrica: [number, number][];
+  polygonAsia: [number, number][];
+  colorEurope: string;
+  colorNorthAmerica: string;
+  colorSouthAmerica: string;
+  colorAustralia: string;
+  colorAfrica: string;
+  colorAsia: string;
   defaultContinent?: ContinentType;
   defaultCityId?: CityID;
 }

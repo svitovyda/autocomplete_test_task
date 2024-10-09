@@ -135,7 +135,7 @@ exports[`CitiesScreen renders without error 1`] = `
         <div>
           MapView Mock
           <pre>
-            {"continent":"Europe"}
+            {"marker":{"id":"4","name":"Berlin","lat":52.52,"lng":13.405},"continent":"Europe"}
           </pre>
         </div>
       </div>
@@ -272,7 +272,7 @@ exports[`CitiesScreen renders without error 1`] = `
       <div>
         MapView Mock
         <pre>
-          {"continent":"Europe"}
+          {"marker":{"id":"4","name":"Berlin","lat":52.52,"lng":13.405},"continent":"Europe"}
         </pre>
       </div>
     </div>
