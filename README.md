@@ -100,7 +100,9 @@ The two examples of this case are shown in **`CitiesScreen`**: one completely st
 - **Visual Testing:** Storybook can be added to test the component visually with different props combination;
 - **Unit testing:** Test IDs should be added to each interactive element, and the user interaction should be unit tested using mocking of components and server responses. As the tests are implemented now, with simple snapshots (with proper `CSS` capturing) and moving the business logic from the `React` component to custom hooks, it was possible to achieve ~80% + test coverage quickly and already catch many potential bugs.
 - **Backend data fetching:** I used plain `fetch`. Some more advanced third-party libraries can be used.
+- If new query has to be fetched, while there is one fetch is in the process, the old one will be ignored. But additionally **fetching canceling** can be implemented.
 - **`SonarCloud`** can be used for the repo, with the correct (non-blocking) setup it can be useful.
 - `React` **`<StrictMode>`** can be used for development mode to identify potential bugs and performance issues.
 - I didn't implement any of the **accessibility requirements** (WCAG) in this version.
 - **Focus change** inside of the `Autocomplete` by up/down keyboard arrows pressing and focus lost can be implemented additionally.
+- **`TypeBox`** can be used for runtime type checking.
